@@ -110,7 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22e174e1eaab349fe83a668bdc3798bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _numberText: {fileID: 0}
+  _numberText: {fileID: 1699738108219059318}
+  _currentBallPosition: 0
 --- !u!114 &8446990581444740159
 MonoBehaviour:
   m_ObjectHideFlags: 0

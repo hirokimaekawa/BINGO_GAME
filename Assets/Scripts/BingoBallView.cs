@@ -27,6 +27,10 @@ public class BingoBallView : MonoBehaviour
     private const string MoveToNextPositionAnimationParameterName
         = "CurrentBallPosition";
 
+    //ビンゴの数の種類→1~75
+    int[] numbersRange = new int[76];
+    
+
     #endregion
 
     #region Methods
@@ -64,6 +68,14 @@ public class BingoBallView : MonoBehaviour
         RectTransform rt = GameObject.Find("Canvas/BingoBallTubeView/GeneratedBallAppearancePosition").GetComponent<RectTransform>();
         _rectTransform = GetComponent<RectTransform>();
         _rectTransform.anchoredPosition = rt.anchoredPosition;
+
+        for (int i = 1; i < numbersRange.Length; i++)
+        {
+            _numberText.text = i.ToString("00");
+            Debug.Log("a=" + i);
+        }
+        
+
         gameObject.SetActive(true);
         _animator.SetInteger(MoveToNextPositionAnimationParameterName, _currentBallPosition);
     }
