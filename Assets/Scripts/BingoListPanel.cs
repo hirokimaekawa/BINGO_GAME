@@ -1,0 +1,45 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class BingoListPanel : MonoBehaviour
+{
+    
+    int minNumber = 1;
+    int maxNumber = 75;
+    public GameObject bingoPanelPrefab;
+
+    //ゆくゆく設定で、ビンゴの数を変更するから配列ではなく、List
+    public List<GameObject> bingoPanelList = new List<GameObject>();
+
+
+    // Start is called before the first frame update
+    void Awake()
+    {
+        //75個のパネルを出すfor文
+        for (int i = minNumber; i <= maxNumber; i++)
+        {
+            
+            GameObject buttonObj = Instantiate(bingoPanelPrefab, transform);
+            buttonObj.GetComponentInChildren<Text>().text = i.ToString();
+            bingoPanelList.Add(buttonObj);
+        }
+    }
+
+    private void Start()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void ChangeColor(int index)
+    {
+        bingoPanelList[index].GetComponent<Image>().color = Color.blue;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}

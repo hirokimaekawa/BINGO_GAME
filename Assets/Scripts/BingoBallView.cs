@@ -1,6 +1,9 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
+using System.Collections;
+
 
 public class BingoBallView : MonoBehaviour
 {
@@ -9,8 +12,9 @@ public class BingoBallView : MonoBehaviour
     //[SerializeField]
     //private Text _letterText;
 
-    [SerializeField]
-    private Text _numberText;
+    [SerializeField] Text _numberText;
+    [SerializeField] Color[] colors;
+    public int i;
 
     //private Image _ballImage;
 
@@ -24,12 +28,16 @@ public class BingoBallView : MonoBehaviour
 
     private const int MaxBallsCount = 6;
 
+    int minNumber = 1;
+    int maxNumber = 75;
+    List<int> numbers = new List<int>();
+
     private const string MoveToNextPositionAnimationParameterName
         = "CurrentBallPosition";
 
-    //ビンゴの数の種類→1~75
-    int[] numbersRange = new int[76];
-    
+    public InputPanel inputPanel;
+
+    public Sprite[] sprite;
 
     #endregion
 
@@ -37,6 +45,7 @@ public class BingoBallView : MonoBehaviour
 
     public void Awake()
     {
+        
         //_ballImage = GetComponent<Image>();
         _rectTransform = GetComponent<RectTransform>();
         _animator = GetComponent<Animator>();
@@ -46,37 +55,45 @@ public class BingoBallView : MonoBehaviour
 
     private void Start()
     {
-        Appear();
+        
+        // image.color = Random.ColorHSV(1,1,1,1);
+        //UnityEngine.Random
+
+        for (int i = minNumber; i <= maxNumber; i++)
+        {
+
+            numbers.Add(i);
+            //numbersに１〜75が入った
+
+        }
+        //75が0になるまで、繰り返す
+        while (maxNumber -->0)
+        {
+
+        }
     }
 
-    //public void PlayBallArivedSound()
-    //{
-    //    _audioSource.Play();
-    //}
-    //public void ApplyBallSprite(Sprite sprite)
-    //{
-    //    if (sprite == null)
-    //    {
-    //        throw new ArgumentNullException("sprite");
-    //    }
-    //    _ballImage.sprite = sprite;
-    //}
-
-    public void Appear()
+    public void Appear(int number)
     {
         _currentBallPosition = 0;
         RectTransform rt = GameObject.Find("Canvas/BingoBallTubeView/GeneratedBallAppearancePosition").GetComponent<RectTransform>();
         _rectTransform = GetComponent<RectTransform>();
         _rectTransform.anchoredPosition = rt.anchoredPosition;
 
-        for (int i = 1; i < numbersRange.Length; i++)
-        {
-            _numberText.text = i.ToString("00");
-            Debug.Log("a=" + i);
-        }
-        
+  
+        i = number;
 
+        _numberText.text = i.ToString();
+        //Debug.Log(i);
+
+        GameObject.Find("BingoNumber/Text").GetComponent<Text>().text = i.ToString();
+        Image image = GetComponent<Image>();
         gameObject.SetActive(true);
+
+        //基本的に、Unity.EngineのRandom.Rangeという認識
+        image.sprite = sprite[UnityEngine.Random.Range(0, sprite.Length)];
+
+        //image.color = colors[UnityEngine.Random.Range(0, colors.Length)];
         _animator.SetInteger(MoveToNextPositionAnimationParameterName, _currentBallPosition);
     }
 

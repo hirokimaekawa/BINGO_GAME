@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/BrilliantBingoStartScene.unity
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/BrilliantBingoScene.unity
+    path: Assets/Scenes/Title.unity
+    guid: 02327d7780f004bb9a7ca7955195a723
+  - enabled: 1
+    path: Assets/Scenes/SingleBingo.unity
+    guid: 28b3946c1a6764026afda34c7aa25735
+  m_configObjects: {}

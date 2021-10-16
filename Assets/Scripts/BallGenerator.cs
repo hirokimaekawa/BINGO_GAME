@@ -10,6 +10,7 @@ public class BallGenerator : MonoBehaviour
     [SerializeField] BingoBallView bingoBallPrefab;
 
     //Ballの生成
+    //voidではなくて、クラス名　関数名にすることで、returnで返すことができる
     public BingoBallView Spawn()
     {
         //生成するときに、親を設定できるからballparentを作る。
