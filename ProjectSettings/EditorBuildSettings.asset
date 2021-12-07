@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SingleBingo.unity
     guid: 28b3946c1a6764026afda34c7aa25735
+  - enabled: 1
+    path: Assets/Scenes/OptionMenu.unity
+    guid: a780d4750d19b43508405c8bed1407d8
   m_configObjects: {}

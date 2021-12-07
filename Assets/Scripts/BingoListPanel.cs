@@ -5,20 +5,25 @@ using UnityEngine.UI;
 
 public class BingoListPanel : MonoBehaviour
 {
-    
+    public OptionManager optionManager;
+
     int minNumber = 1;
+
     int maxNumber = 75;
     public GameObject bingoPanelPrefab;
 
     //ゆくゆく設定で、ビンゴの数を変更するから配列ではなく、List
     public List<GameObject> bingoPanelList = new List<GameObject>();
 
-
+    //非表示だから、まだ実行されていない
     // Start is called before the first frame update
     void Awake()
     {
-        //75個のパネルを出すfor文
-        for (int i = minNumber; i <= maxNumber; i++)
+        optionManager.Load();
+        //ここだけ、Debugができていない『なんでだろう？』
+        Debug.Log("BingoListPanelのMaxNumberは" + optionManager.maxNumber);
+
+        for (int i = minNumber; i <= optionManager.maxNumber; i++)
         {
             
             GameObject buttonObj = Instantiate(bingoPanelPrefab, transform);
@@ -29,6 +34,7 @@ public class BingoListPanel : MonoBehaviour
 
     private void Start()
     {
+       
         gameObject.SetActive(false);
     }
 

@@ -10,6 +10,8 @@ public class InputPanel : MonoBehaviour
 
     [SerializeField] GameObject BingoButtonPrefab = default;
 
+    //public OptionManager optionManager;
+
     //[SerializeField] Text bingoNumberText;
 
     int minNumber = 1;
@@ -22,16 +24,24 @@ public class InputPanel : MonoBehaviour
 
     public List<int> panelRausuList = new List<int>();
 
-    public List<int> aNumber = new List<int>();
+    //public List<int> aNumber = new List<int>();
 
     public GameManager gameManager;
 
     private void Start()
     {
+        OptionManager.instance.Load();
+        Debug.Log("InputPanelのMaxNumberは" + OptionManager.instance.maxNumber);
 
-        for (int i = minNumber; i <= maxNumber; i++)
+        Invoke("SwapnPanel", 1);
+        
+    }
+
+    void SwapnPanel()
+    {
+        for (int i = minNumber; i <= OptionManager.instance.maxNumber; i++)
         {
-
+            //minNumber=1〜maxNumber=75
             numbers.Add(i);
 
         }
@@ -46,21 +56,28 @@ public class InputPanel : MonoBehaviour
 
             //ここで、panelRansuをListに入れる
             panelRausuList.Add(panelRansu);
-
+            Debug.Log(panelRansu);
             numbers.Remove(panelRansu);
+            Debug.Log(panelRansu);
             GameObject buttonObj = Instantiate(BingoButtonPrefab, transform);
 
             buttonObj.GetComponentInChildren<Text>().text = panelRansu.ToString();
             buttonObj.GetComponent<InputButton>().number = panelRansu;
         }
 
-        Debug.Log(numbers[0]);
-
+        //Debug.Log(numbers[0]);
+        //panelRansuは、パネル1個1個の数字、panelRansuそのものが数字
+        //Debug.Log(panelRansu);
 
     }
 
-    //横ビンゴ！
-    bool Checkcol(int col)
+
+    //0, 1, 2, 3, 4,
+    //5, 6, 7, 8, 9,
+    //10,11,12,13,14,
+    //15,16,17,18,19,
+    //20,21,22,23,24,
+    bool CheckColBingo(int col)
     {
         for (int i = 0; i < 5; i++)
         {
@@ -70,172 +87,179 @@ public class InputPanel : MonoBehaviour
                 return false;
             }
         }
+        OptionManager.instance.OnBingoSE();
+        gameManager.InvokeBingoPanel();
         return true;
 
     }
 
-    //【できた】横リーチ判定=>0,1,2,3のリーチ判定はできる
-    bool CheckcolReach1(int col)
+    bool CheckColReach(int col,int number)
     {
-        for (int i = 0; i < 4; i++)
-        {
-            if (!gameManager.ranses.Contains(panelRausuList[i + 5 * col]))
-            {
-                return false;
-            }
-        }
-        return true;
-    }
+        Debug.Log("CheckcolReach1");
 
-    //【できた】横リーチ判定=>1,2,3,4のリーチ判定はできる
-    bool CheckcolReach2(int col)
-    {
-        for (int i = 1; i < 5; i++)
-        {
-            if (!gameManager.ranses.Contains(panelRausuList[i + 5 * col]))
-            {
-                return false;
-            }
-        }
-        return true;
-    }
-
-
-    
-
-    //【できた】横リーチ判定=>0,2,3,4のリーチ判定はできる
-    bool CheckcolReach3(int col)
-    {
-        for (int i = 2; i < 5; i++)
-        {
-            if (!gameManager.ranses.Contains(panelRausuList[i + 5 * col]))
-            {
-                return false;
-            }
-            
-        }
-        if (!gameManager.ranses.Contains(panelRausuList[5 * col]))
-        {
-            return false;
-        }
-        return true;
-    }
-
-    //0, 1, 2, 3, 4,
-    //5, 6, 7, 8, 9,
-    //10,11,12,13,14,
-    //15,16,17,18,19,
-    //20,21,22,23,24,
-
-    //【まだできていない】横リーチ判定=>0,1,3,4のリーチ判定はできる
-    bool CheckcolReach4(int col)
-    {
-        for (int i = 0; i < 3; i++)
-        {
-            if (!gameManager.ranses.Contains(panelRausuList[i + 5 * col]))
-            {
-                return false;
-            }
-
-        }
-
-        for (int i = 3; i < 5; i++)
-        {
-            if (!gameManager.ranses.Contains(panelRausuList[i + 5 * col]))
-            {
-                return false;
-            }
-
-        }
-
-        return true;
-    }
-    //【できた】横リーチ判定=>0,1,2,4のリーチ判定はできる
-    bool CheckcolReach5(int col)
-    {
-        for (int i = 0; i < 3; i++)
-        {
-            if (!gameManager.ranses.Contains(panelRausuList[i + 5 * col]))
-            {
-                return false;
-            }
-
-        }
-        if (!gameManager.ranses.Contains(panelRausuList[4+5 * col]))
-        {
-            return false;
-        }
-        return true;
-    }
-
-    //一致しているのに、falseのまま
-    bool CheckRow(int row)
-    {
-        // 横5つ
+        //この辺、もう一度確認
+        //numberは5回ループさせて、チェックするということ？
+        //colは、列のこと？
         for (int i = 0; i < 5; i++)
         {
-            // 答えと一致するか？
+            if (number == i)
+            {
+                continue;//iを飛ばしている。
+            }
+
+            if (!gameManager.ranses.Contains(panelRausuList[i + 5 * col]))
+            {
+                return false;
+            }
+        }
+        //number = 0の時
+        OptionManager.instance.OnReachSE();
+        gameManager.InvokeReachPanel();
+        return true;
+    }
+
+   
+    bool CheckRowReach(int row,int number)
+    {
+        Debug.Log("CheckRow1");
+       
+        for (int i = 0; i < 5; i++)
+        {
+            if (number == i)
+            {
+                continue;
+            }
+          
             if (!gameManager.ranses.Contains(panelRausuList[5 * i + row]))
             {
-                return false; // 一致しないものがあれば,　その時点でfalse
+                return false; 
             }
         }
-        // 1つもfalseがない => 横は全て一致
+       
+        OptionManager.instance.OnReachSE();
+        gameManager.InvokeReachPanel();
         return true;
     }
 
-
-    //一致しているはずなのに、falseのまま
-    bool CheckCross0()
+    bool CheckRowBingo(int row)
     {
-        // 横5つ
         for (int i = 0; i < 5; i++)
         {
-            // 答えと一致するか？
+            
+            if (!gameManager.ranses.Contains(panelRausuList[5 * i + row]))
+            {
+                return false;
+            }
+        }
+        
+        OptionManager.instance.OnBingoSE();
+        gameManager.InvokeBingoPanel();
+        return true;
+    }
+
+    bool CheckCrossBingo_0()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+          
             if (!gameManager.ranses.Contains(panelRausuList[6 * i]))
             {
-                return false; // 一致しないものがあれば,　その時点でfalse
+                return false;
             }
         }
-        // 1つもfalseがない => 横は全て一致
+        OptionManager.instance.OnBingoSE();
+        gameManager.InvokeBingoPanel();
         return true;
     }
 
-    bool CheckCross4()
+    bool CheckCrossReach_0(int number)
     {
-        // 横5つ
+        Debug.Log("CheckCross0_1");
+       
+
         for (int i = 0; i < 5; i++)
         {
-            // 答えと一致するか？
-            if (!gameManager.ranses.Contains(panelRausuList[4 * i + 4]))
+
+            if (number == i)
             {
-                return false; // 一致しないものがあれば,　その時点でfalse
+                continue;
+            }
+            if (!gameManager.ranses.Contains(panelRausuList[6 * i]))
+            {
+                return false; 
             }
         }
-        // 1つもfalseがない => 横は全て一致
+        OptionManager.instance.OnReachSE();
+        gameManager.InvokeReachPanel();
         return true;
+    }
+
+  
+
+    bool CheckCrossBingo_4()
+    {
+        
+        for (int i = 0; i < 5; i++)
+        {
+            if (!gameManager.ranses.Contains(panelRausuList[4 * i + 4]))
+            {
+                return false; 
+            }
+        }
+        OptionManager.instance.OnBingoSE();
+        gameManager.InvokeBingoPanel();
+        return true;
+    }
+
+    bool CheckCrossReach_4(int number)
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            if (number == i)
+            {
+                continue;
+            }
+            if (!gameManager.ranses.Contains(panelRausuList[4 * i + 4]))
+            {
+                return false; 
+            }
+        }
+        OptionManager.instance.OnReachSE();
+        gameManager.InvokeReachPanel();
+        return true;
+    }
+
+    
+    public void DebugReach()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            for (int col = 0; col < 5; col++)
+            {
+                //col=0　=>　配列になにもない（null）なら→UI表示→表示したら配列に入れる　もう二度とcol=0で反応しないようにしたい
+                Debug.Log(col);
+                CheckColReach(col, i);
+            }
+            for (int row = 0; row < 5; row++)
+            {
+                CheckRowReach(row, i);
+            }
+            CheckCrossReach_0(i);
+            CheckCrossReach_4(i);
+        }
+
     }
 
     public void DebugBingo()
     {
+        //
         for (int i = 0; i < 5; i++)
         {
-            //Debug.Log($"{i+1}行目ビンゴ:{Checkcol(i)}");
-            //Debug.Log($"{i + 1}行目リーチ:{CheckcolReach1(i)}");
-            //Debug.Log($"{i + 1}行目リーチ:{CheckcolReach2(i)}");
-            //Debug.Log($"{i + 1}行目リーチ:{CheckcolReach3(i)}");
-            //Debug.Log($"{i + 1}行目リーチ:{CheckcolReach4(i)}");
-            Debug.Log($"{i + 1}行目リーチ:{CheckcolReach4(i)}");
-            //Debug.Log($"{i+1}列目ビンゴ:{CheckRow(i)}");
+            CheckColBingo(i);
+            CheckRowBingo(i);
         }
-        //Debug.Log("左上→右下ななめビンゴ"+CheckCross0());
-        //Debug.Log("右上→左下ななめビンゴ"+CheckCross4());
+        CheckCrossBingo_0();
+        CheckCrossBingo_4();
 
     }
-
-    
 }
-
-
-
-

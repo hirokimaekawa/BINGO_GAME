@@ -28,6 +28,8 @@ public class BingoBallView : MonoBehaviour
 
     private const int MaxBallsCount = 6;
 
+    OptionManager optionManager;
+
     int minNumber = 1;
     int maxNumber = 75;
     List<int> numbers = new List<int>();
@@ -45,7 +47,7 @@ public class BingoBallView : MonoBehaviour
 
     public void Awake()
     {
-        
+
         //_ballImage = GetComponent<Image>();
         _rectTransform = GetComponent<RectTransform>();
         _animator = GetComponent<Animator>();
@@ -55,11 +57,16 @@ public class BingoBallView : MonoBehaviour
 
     private void Start()
     {
-        
+        //プレハブには、ヒエラルキーからアタッチできないから、GetComponent<OptionManager>()をつけることで、左右の変数の型を揃えている
+        optionManager = GameObject.Find("OptionManager").GetComponent<OptionManager>();
         // image.color = Random.ColorHSV(1,1,1,1);
         //UnityEngine.Random
+        //★★ゆくゆくmaxNumber→optionManager.maxNumberへ
 
-        for (int i = minNumber; i <= maxNumber; i++)
+        optionManager.Load();
+        Debug.Log("BingoBallViewのMaxNumberは" + optionManager.maxNumber);
+
+        for (int i = minNumber; i <= optionManager.maxNumber; i++)
         {
 
             numbers.Add(i);
@@ -67,7 +74,7 @@ public class BingoBallView : MonoBehaviour
 
         }
         //75が0になるまで、繰り返す
-        while (maxNumber -->0)
+        while (optionManager.maxNumber-- >0)
         {
 
         }

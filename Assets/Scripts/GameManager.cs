@@ -14,6 +14,11 @@ public class GameManager : MonoBehaviour
     int minNumber = 1;
     int maxNumber = 75;
 
+
+    public static GameManager instance;
+
+    public OptionManager optionManager;
+
     public int ransu;
 
     public InputPanel inputPanel;
@@ -25,13 +30,21 @@ public class GameManager : MonoBehaviour
     public GameObject startButton;
     public GameObject listPanel;
 
+    public GameObject reachPanel;
+    public GameObject bingoPanel;
+
     List<int> numbers = new List<int>();
 
     public List<int> ranses = new List<int>();
 
     private void Start()
     {
-        for (int i = minNumber; i <= maxNumber; i++)
+
+        Random.InitState(1);
+
+        optionManager.Load();
+        Debug.Log("GameManagerのMaxNumberは" + optionManager.maxNumber);
+        for (int i = minNumber; i <= optionManager.maxNumber; i++)
         { 
             numbers.Add(i);
         }
@@ -47,19 +60,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //色を変える関数は、GameManager.csと新しく作ったBingoListPanel.CSのどちらのクラスで作ったら良いのか、迷っている（9月20日）
-        //とりあえず、GameManager.csで色を変える関数を作っている（9月21日）
-        //if (bingoListPanel.bingoPanelList.Contains(ransu))
-        //{
-            //プレハブのボタンのであるBingoPanelButtonのImageのColorを変更する
-            //bingoPanelPrefab.GetComponent<Image>().color = Color.cyan;
-        //}
+        
     }
 
     public void OnStartButton()
     {
-        //9月13日
-        //Debug.Log("スタートを押した");
+        
          for (int i = balls.Length-1; i>=0 ;i--)
          {
             if (balls[i].gameObject.activeSelf == true)
@@ -127,7 +133,36 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
+    IEnumerator ShowReachPanel()
+    {
+        reachPanel.SetActive(true);
+
+        yield return new WaitForSeconds(0.8f);
+
+        reachPanel.SetActive(false);
+
+    }
+
+    public void InvokeReachPanel()
+    {
+        StartCoroutine("ShowReachPanel");
+    }
+
+    IEnumerator ShowBingoPanel()
+    {
+        bingoPanel.SetActive(true);
+
+        yield return new WaitForSeconds(0.8f);
+
+        bingoPanel.SetActive(false);
+
+    }
+
+    public void InvokeBingoPanel()
+    {
+        StartCoroutine("ShowBingoPanel");
+    }
+
     public void onBackButton()
     {
         SceneManager.LoadScene("Title");
