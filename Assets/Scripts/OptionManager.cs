@@ -32,8 +32,9 @@ public class OptionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Titleから始めると、ここでエラーが生じている。OptionManagerのinspectorに何も入っていない状態だから
         audioSourceSE.PlayOneShot(audioClipsSE[2]);
-        //ここの75に引っ張られてしまっている、セーブはできているか、各シーンのOptionManagerでは、MaxNumberは、75になっている
+       
         maxNumber = 75;
     }
 

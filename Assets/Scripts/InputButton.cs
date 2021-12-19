@@ -36,8 +36,18 @@ public class InputButton : MonoBehaviour
             //isBingo = true;
             OptionManager.instance.OnButtonSE();
 
-            inputPanel.DebugReach();
-            inputPanel.DebugBingo();
+            if (inputPanel.DebugBingo())
+            {
+                //ビンゴなら、ビンゴ専用のエンディング
+
+            }
+            else
+            {
+                //ビンゴじゃないなら、リーチを調べる
+                inputPanel.DebugReach();
+            }
+           
+           
         }
         else
         {

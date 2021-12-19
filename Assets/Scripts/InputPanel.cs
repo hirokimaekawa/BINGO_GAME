@@ -28,6 +28,13 @@ public class InputPanel : MonoBehaviour
 
     public GameManager gameManager;
 
+    //リーチしたかどうか  false:まだリーチしていない、true:リーチになった
+    bool[] reachColFlag = new bool[5];
+    bool[] reachRowFlag = new bool[5];
+    //new bool[2];というのは、2個の要素が入るっていう意味
+    //reachCrossFlag[0]は、つまり1番目。 reachCrossFlag[1]は、つまり2番目
+    bool[] reachCrossFlag = new bool[2];
+
     private void Start()
     {
         OptionManager.instance.Load();
@@ -96,7 +103,10 @@ public class InputPanel : MonoBehaviour
     bool CheckColReach(int col,int number)
     {
         Debug.Log("CheckcolReach1");
-
+        if (reachColFlag[col])
+        {
+            return true;
+        }
         //この辺、もう一度確認
         //numberは5回ループさせて、チェックするということ？
         //colは、列のこと？
@@ -115,6 +125,8 @@ public class InputPanel : MonoBehaviour
         //number = 0の時
         OptionManager.instance.OnReachSE();
         gameManager.InvokeReachPanel();
+
+        reachColFlag[col] = true;
         return true;
     }
 
@@ -122,7 +134,10 @@ public class InputPanel : MonoBehaviour
     bool CheckRowReach(int row,int number)
     {
         Debug.Log("CheckRow1");
-       
+        if (reachRowFlag[row])
+        {
+            return true;
+        }
         for (int i = 0; i < 5; i++)
         {
             if (number == i)
@@ -138,6 +153,8 @@ public class InputPanel : MonoBehaviour
        
         OptionManager.instance.OnReachSE();
         gameManager.InvokeReachPanel();
+
+        reachRowFlag[row] = true;
         return true;
     }
 
@@ -175,8 +192,11 @@ public class InputPanel : MonoBehaviour
     bool CheckCrossReach_0(int number)
     {
         Debug.Log("CheckCross0_1");
-       
 
+        if (reachCrossFlag[0])
+        {
+            return true;
+        }
         for (int i = 0; i < 5; i++)
         {
 
@@ -189,8 +209,12 @@ public class InputPanel : MonoBehaviour
                 return false; 
             }
         }
+
+        //実際のリーチ表現をしているのは、以下の2行
         OptionManager.instance.OnReachSE();
         gameManager.InvokeReachPanel();
+
+        reachCrossFlag[0] = true;
         return true;
     }
 
@@ -213,6 +237,11 @@ public class InputPanel : MonoBehaviour
 
     bool CheckCrossReach_4(int number)
     {
+        if (reachCrossFlag[1])
+        {
+            return true;
+        }
+
         for (int i = 0; i < 5; i++)
         {
             if (number == i)
@@ -226,6 +255,8 @@ public class InputPanel : MonoBehaviour
         }
         OptionManager.instance.OnReachSE();
         gameManager.InvokeReachPanel();
+
+        reachCrossFlag[1] = true;
         return true;
     }
 
@@ -250,16 +281,32 @@ public class InputPanel : MonoBehaviour
 
     }
 
-    public void DebugBingo()
+    public bool DebugBingo()
     {
         //
         for (int i = 0; i < 5; i++)
         {
-            CheckColBingo(i);
-            CheckRowBingo(i);
+            if (CheckColBingo(i))
+            {
+                return true;
+                //trueを返す＝ここで処理が終わる
+            }
+            if (CheckRowBingo(i))
+            {
+                return true;
+            }
+            
         }
-        CheckCrossBingo_0();
-        CheckCrossBingo_4();
+        if (CheckCrossBingo_0())
+        {
+            return true;
+        }
+        if (CheckCrossBingo_4())
+        {
+            return true;
+        }
+        //全部のif文に引っ掛からなかったら、ここに行き着く,falseになる
+        return false;
 
     }
 }
