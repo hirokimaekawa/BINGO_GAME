@@ -18,7 +18,8 @@ public class OptionManager : MonoBehaviour
     private void Awake()
     {
         //このセーブ（Awake）シングルトンのクラスの場合、いつ発動しているんだろう？
-        Save();
+        //コメントアウトしたら、InspectorのmaxNumberが、0になっている
+        //Save();
         if (instance == null)
         {
             instance = this;

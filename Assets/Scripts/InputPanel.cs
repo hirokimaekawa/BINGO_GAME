@@ -40,7 +40,7 @@ public class InputPanel : MonoBehaviour
         OptionManager.instance.Load();
         Debug.Log("InputPanelのMaxNumberは" + OptionManager.instance.maxNumber);
 
-        Invoke("SwapnPanel", 1);
+        Invoke("SwapnPanel", 0.1f);
         
     }
 
@@ -60,7 +60,7 @@ public class InputPanel : MonoBehaviour
             int index = Random.Range(0, numbers.Count);
 
             panelRansu = numbers[index];
-
+            Debug.Log(panelRansu);
             //ここで、panelRansuをListに入れる
             panelRausuList.Add(panelRansu);
             //Debug.Log(panelRansu);
