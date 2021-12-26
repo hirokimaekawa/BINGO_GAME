@@ -63,9 +63,9 @@ public class InputPanel : MonoBehaviour
 
             //ここで、panelRansuをListに入れる
             panelRausuList.Add(panelRansu);
-            Debug.Log(panelRansu);
+            //Debug.Log(panelRansu);
             numbers.Remove(panelRansu);
-            Debug.Log(panelRansu);
+            //Debug.Log(panelRansu);
             GameObject buttonObj = Instantiate(BingoButtonPrefab, transform);
 
             buttonObj.GetComponentInChildren<Text>().text = panelRansu.ToString();

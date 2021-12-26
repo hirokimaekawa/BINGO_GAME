@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
-    public OptionManager optionManager;
 
     public int ransu;
 
@@ -42,9 +41,9 @@ public class GameManager : MonoBehaviour
 
         Random.InitState(1);
 
-        optionManager.Load();
-        Debug.Log("GameManagerのMaxNumberは" + optionManager.maxNumber);
-        for (int i = minNumber; i <= optionManager.maxNumber; i++)
+        OptionManager.instance.Load();
+        Debug.Log("GameManagerのMaxNumberは" + OptionManager.instance.maxNumber);
+        for (int i = minNumber; i <= OptionManager.instance.maxNumber; i++)
         { 
             numbers.Add(i);
         }

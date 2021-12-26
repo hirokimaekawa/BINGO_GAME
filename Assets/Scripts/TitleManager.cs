@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class TitleManager : MonoBehaviour
 {
-    public OptionManager optionManager;
+    //DontDestrotyしているのは、inspectorに格納しないほうがいい
+    //public OptionManager optionManager;
    
     // Start is called before the first frame update
     void Start()
@@ -19,11 +20,15 @@ public class TitleManager : MonoBehaviour
         
     }
 
-    public void onSingleBingoButton()
+    public void OnSingleBingoButton()
     {
-        
-        //ここも、エラーが生じる
-        optionManager.Load();
+       
+        OptionManager.instance.Load();
         SceneManager.LoadScene("SingleBingo");
+    }
+
+    public void OnOptionSceneButton()
+    {
+        SceneManager.LoadScene("OptionMenu");
     }
 }

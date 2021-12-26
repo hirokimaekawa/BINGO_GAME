@@ -17,6 +17,8 @@ public class OptionManager : MonoBehaviour
 
     private void Awake()
     {
+        //このセーブ（Awake）シングルトンのクラスの場合、いつ発動しているんだろう？
+        Save();
         if (instance == null)
         {
             instance = this;
@@ -102,17 +104,15 @@ public class OptionManager : MonoBehaviour
 
     public void OnReachSE()
     {
-        //なっている。
-        //Debug.Log("SEが鳴っている");
+       
         audioSourceSE.PlayOneShot(audioClipsSE[0]);
-        //GameManager.instance.InvokeReachPanel();
+     
     }
 
     public void OnBingoSE()
     {
         audioSourceSE.PlayOneShot(audioClipsSE[1]);
-        //GameManager.instance.InvokeBingoPanel();
-        //【11月23日】GameManager.csのBingoPanelもSEも鳴っていない＜スクショ済み＞
+        
     }
     
 
@@ -124,8 +124,6 @@ public class OptionManager : MonoBehaviour
 
     public void Load()
     {
-        //デバックを取るためには、maxNumberを作る
         maxNumber = PlayerPrefs.GetInt(SAVEKEY, maxNumber);
-        Debug.Log(maxNumber);
     }
 }

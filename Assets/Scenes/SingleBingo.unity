@@ -319,7 +319,6 @@ MonoBehaviour:
     type: 3}
   panelRansu: 0
   panelRausuList: 
-  aNumber: 
   gameManager: {fileID: 1123078451}
 --- !u!1 &408305025
 GameObject:
@@ -595,7 +594,6 @@ MonoBehaviour:
   audioSourceBGM: {fileID: 0}
   audioSourceSE: {fileID: 0}
   audioClipsSE: []
-  gameManager: {fileID: 1123078451}
 --- !u!4 &588269637
 Transform:
   m_ObjectHideFlags: 0
@@ -693,9 +691,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1123078451}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: onBackButton
+      - m_Target: {fileID: 1241311191}
+        m_TargetAssemblyTypeName: OptionController, Assembly-CSharp
+        m_MethodName: OnBackButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1295,6 +1293,49 @@ MonoBehaviour:
   bingoPanelPrefab: {fileID: 5907667911749344800, guid: dae406ea8ec5f4d1791d10f3cd43cbdb,
     type: 3}
   bingoPanelList: []
+--- !u!1 &1241311190
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1241311192}
+  - component: {fileID: 1241311191}
+  m_Layer: 0
+  m_Name: OptionController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1241311191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241311190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61004949ef2614f87bdffab52de6c08b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1241311192
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241311190}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 817.37103, y: 1049.3466, z: -134.84216}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1287496742
 GameObject:
   m_ObjectHideFlags: 0

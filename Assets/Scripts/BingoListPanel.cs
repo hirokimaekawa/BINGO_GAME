@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class BingoListPanel : MonoBehaviour
 {
-    public OptionManager optionManager;
+    //public OptionManager optionManager;
 
     int minNumber = 1;
 
@@ -19,11 +19,11 @@ public class BingoListPanel : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        optionManager.Load();
+        OptionManager.instance.Load();
         //ここだけ、Debugができていない『なんでだろう？』
-        Debug.Log("BingoListPanelのMaxNumberは" + optionManager.maxNumber);
+        Debug.Log("BingoListPanelのMaxNumberは" + OptionManager.instance.maxNumber);
 
-        for (int i = minNumber; i <= optionManager.maxNumber; i++)
+        for (int i = minNumber; i <= OptionManager.instance.maxNumber; i++)
         {
             
             GameObject buttonObj = Instantiate(bingoPanelPrefab, transform);
