@@ -31,4 +31,14 @@ public class TitleManager : MonoBehaviour
     {
         SceneManager.LoadScene("OptionMenu");
     }
+
+    public void OnMultiBingoButton()
+    {
+        SceneManager.LoadScene("MultiBingo");
+    }
+
+    public void OnRuleButton()
+    {
+        SceneManager.LoadScene("Rule");
+    }
 }

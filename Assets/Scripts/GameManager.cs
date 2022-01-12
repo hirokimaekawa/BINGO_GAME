@@ -38,8 +38,10 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-
-        Random.InitState(1);
+        //そもそも、なんでここに書いたんだろう？
+        //だって、このランダムを固定するのは、InputPanelでのパネルをSpwanする時の話。
+        //
+        //Random.InitState(10);
 
         OptionManager.instance.Load();
         Debug.Log("GameManagerのMaxNumberは" + OptionManager.instance.maxNumber);
@@ -64,7 +66,7 @@ public class GameManager : MonoBehaviour
 
     public void OnStartButton()
     {
-        
+        Debug.Log("スタートボタンが押された");
          for (int i = balls.Length-1; i>=0 ;i--)
          {
             if (balls[i].gameObject.activeSelf == true)
@@ -74,9 +76,7 @@ public class GameManager : MonoBehaviour
             }
             int index = Random.Range(0, numbers.Count);
             ransu = numbers[index];
-            SpawnBall(i, ransu);
-
-            
+            SpawnBall(i, ransu);            
         }
         //Listを作ってransuを記録する
         ranses.Add(ransu);
@@ -85,9 +85,7 @@ public class GameManager : MonoBehaviour
         bingoListPanel.ChangeColor(ransu-1);
         if (inputPanel.panelRausuList.Contains(ransu))
         {
-
             startButton.SetActive(false);
-
         }
         else
         {

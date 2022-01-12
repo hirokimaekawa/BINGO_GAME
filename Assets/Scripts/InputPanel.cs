@@ -37,6 +37,8 @@ public class InputPanel : MonoBehaviour
 
     private void Start()
     {
+        //こっちに書いても、GameManagerでの挙動と同じだった。
+        //Random.InitState(10);
         OptionManager.instance.Load();
         Debug.Log("InputPanelのMaxNumberは" + OptionManager.instance.maxNumber);
 
