@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MultiBingo.unity
     guid: 10d2c98bb9ca3415f873cc3d09446c32
+  - enabled: 1
+    path: Assets/Scenes/Rule.unity
+    guid: ea15212e3cfed4f7c939e314ad846290
   m_configObjects: {}

@@ -83,6 +83,10 @@ public class GameManager : MonoBehaviour
         numbers.Remove(ransu);
         //Debug.Log(ransu);
         bingoListPanel.ChangeColor(ransu-1);
+
+        //inputPanelはNull
+        Debug.Log(inputPanel);
+        Debug.Log(inputPanel.panelRausuList);
         if (inputPanel.panelRausuList.Contains(ransu))
         {
             startButton.SetActive(false);

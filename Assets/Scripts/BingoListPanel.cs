@@ -25,7 +25,6 @@ public class BingoListPanel : MonoBehaviour
 
         for (int i = minNumber; i <= OptionManager.instance.maxNumber; i++)
         {
-            
             GameObject buttonObj = Instantiate(bingoPanelPrefab, transform);
             buttonObj.GetComponentInChildren<Text>().text = i.ToString();
             bingoPanelList.Add(buttonObj);
@@ -34,13 +33,17 @@ public class BingoListPanel : MonoBehaviour
 
     private void Start()
     {
-       
+       //Insepectorで最初、Trueにしておかないと、
         gameObject.SetActive(false);
     }
 
     public void ChangeColor(int index)
     {
+        Debug.Log(index);
+        //bingoPanelListが０になっている
+        Debug.Log(bingoPanelList.Count);
         bingoPanelList[index].GetComponent<Image>().color = Color.blue;
+        
     }
 
     // Update is called once per frame

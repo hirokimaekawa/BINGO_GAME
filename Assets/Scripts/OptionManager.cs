@@ -11,7 +11,6 @@ public class OptionManager : MonoBehaviour
     public AudioSource audioSourceSE;
     public AudioClip [] audioClipsSE;
 
-    //public GameManager gameManager;
  
     public static OptionManager instance;
 
