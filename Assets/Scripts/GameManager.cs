@@ -74,6 +74,7 @@ public class GameManager : MonoBehaviour
                 balls[i].MoveToNextPosition();
                 continue;//SpawnBall関数の処理終わり →一個飛ばす
             }
+            //ここで乱数が決まっている
             int index = Random.Range(0, numbers.Count);
             ransu = numbers[index];
             SpawnBall(i, ransu);            

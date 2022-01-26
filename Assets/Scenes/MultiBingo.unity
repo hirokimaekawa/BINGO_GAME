@@ -1014,7 +1014,7 @@ MonoBehaviour:
   bingoListPanel: {fileID: 1209037489}
   startButton: {fileID: 1287496742}
   stopButton: {fileID: 666385390}
-  listPanel: {fileID: 408305025}
+  listPanel: {fileID: 1209037484}
   ranses: 
   isAppear: 0
 --- !u!4 &1171013526

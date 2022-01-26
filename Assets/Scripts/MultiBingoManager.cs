@@ -61,11 +61,14 @@ public class MultiBingoManager : MonoBehaviour
 
     }
 
+    bool roulette = false;
     public void OnStartButton()
     {
         Debug.Log("スタートボタンが押された");
-
+        StopAllCoroutines();
+        StartCoroutine(NumberSelection());
         int index = Random.Range(0, numbers.Count);
+       
         ransu = numbers[index];
 
         //Listを作ってransuを記録する
@@ -83,11 +86,21 @@ public class MultiBingoManager : MonoBehaviour
        
     }
 
+    IEnumerator NumberSelection()
+    {
+        roulette = true;
+        //ずっと、whileになって、応答なしになる
+        while (roulette)
+        {
+            _numberText.text = Random.Range(1, 76).ToString();//ランダムで止まった数字と、リストで青色になった数字が違う
+            //Appear()で   _numberText.text = i.ToString();が殺されてしまっている
+            yield return new WaitForSeconds(0.1f);//ちょっと遅い
+        }
+    }
+
     void Appear(int number)
     {
-        i = number;
-
-        _numberText.text = i.ToString();
+        number = i;
         //Debug.Log(i);
 
         GameObject.Find("BingoNumber/Text").GetComponent<Text>().text = i.ToString();
@@ -97,6 +110,8 @@ public class MultiBingoManager : MonoBehaviour
 
     public void OnStopButton()
     {
+        roulette = false;
+        //Appear(ransu);
         stopButton.SetActive(false);
         startButton.SetActive(true);
     }
@@ -106,7 +121,7 @@ public class MultiBingoManager : MonoBehaviour
     {
         Debug.Log("リストを押した");
         Debug.Log(isAppear);//false
-        Debug.Log("リストのアクティブセルフは:" + listPanel.activeSelf);
+        
         if (isAppear)
         { 
             listPanel.SetActive(false);
@@ -118,7 +133,7 @@ public class MultiBingoManager : MonoBehaviour
             listPanel.SetActive(true);
             isAppear = true;
         }
-
+        Debug.Log("リストのアクティブセルフは:" + listPanel.activeSelf);
     }
   
 }
