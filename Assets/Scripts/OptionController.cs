@@ -47,4 +47,10 @@ public class OptionController : MonoBehaviour
         OptionManager.instance.OnBingoumberIncrease();
         
     }
+
+    public void OnStopFlashButton()
+    {
+        OptionManager.instance.OnButtonSE();
+    }
+
 }

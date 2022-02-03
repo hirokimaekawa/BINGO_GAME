@@ -75,8 +75,8 @@ public class MultiBingoManager : MonoBehaviour
         ranses.Add(ransu);
         Appear(ransu);
         Debug.Log(ransu);
-        bingoListPanel.ChangeColor(ransu - 1);
-        numbers.Remove(ransu);
+        //bingoListPanel.ChangeColor(ransu - 1);
+    
         Debug.Log(ransu);
 
         Debug.Log("ビンゴパネル"+bingoListPanel);
@@ -92,10 +92,14 @@ public class MultiBingoManager : MonoBehaviour
         //ずっと、whileになって、応答なしになる
         while (roulette)
         {
-            _numberText.text = Random.Range(1, 76).ToString();//ランダムで止まった数字と、リストで青色になった数字が違う
+            int r = Random.Range(0,numbers.Count);
+            _numberText.text = numbers[r].ToString();//ランダムで止まった数字と、リストで青色になった数字が違う
             //Appear()で   _numberText.text = i.ToString();が殺されてしまっている
             yield return new WaitForSeconds(0.1f);//ちょっと遅い
         }
+        //While(roulette)の処理が終わったら、以下実行される
+        _numberText.text = ransu.ToString();
+
     }
 
     void Appear(int number)
@@ -111,7 +115,9 @@ public class MultiBingoManager : MonoBehaviour
     public void OnStopButton()
     {
         roulette = false;
-        //Appear(ransu);
+        Appear(ransu);
+        bingoListPanel.ChangeColor(ransu - 1);
+        numbers.Remove(ransu);
         stopButton.SetActive(false);
         startButton.SetActive(true);
     }

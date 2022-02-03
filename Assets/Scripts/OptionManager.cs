@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class OptionManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class OptionManager : MonoBehaviour
     public AudioSource audioSourceBGM;
     public AudioSource audioSourceSE;
     public AudioClip [] audioClipsSE;
+    public Text bingoNumberText;
 
  
     public static OptionManager instance;
@@ -38,6 +40,7 @@ public class OptionManager : MonoBehaviour
         audioSourceSE.PlayOneShot(audioClipsSE[2]);
        
         maxNumber = 75;
+        //bingoNumberText.text = maxNumber.ToString();
     }
 
     // Update is called once per frame
@@ -73,6 +76,7 @@ public class OptionManager : MonoBehaviour
         if (maxNumber <= 75 && maxNumber > 25)
         {
             maxNumber--;
+            bingoNumberText.text = maxNumber.ToString();
             Debug.Log("左ボタン");
         }
         
@@ -83,6 +87,7 @@ public class OptionManager : MonoBehaviour
         if (maxNumber < 75 && maxNumber >= 25)
         {
             maxNumber++;
+            bingoNumberText.text = maxNumber.ToString();
             Debug.Log("右ボタン");
         }
         

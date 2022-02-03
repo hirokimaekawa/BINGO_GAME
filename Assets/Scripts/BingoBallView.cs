@@ -73,11 +73,11 @@ public class BingoBallView : MonoBehaviour
             //numbersに１〜75が入った
 
         }
-        //75が0になるまで、繰り返す
-        while (optionManager.maxNumber-- >0)
-        {
+        ////75が0になるまで、繰り返す
+        //while (optionManager.maxNumber-- >0)
+        //{
 
-        }
+        //}
     }
 
     public void Appear(int number)
