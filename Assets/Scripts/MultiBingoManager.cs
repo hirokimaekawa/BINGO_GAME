@@ -34,10 +34,12 @@ public class MultiBingoManager : MonoBehaviour
     public GameObject stopButton;
     public GameObject listPanel;
 
-
     List<int> numbers = new List<int>();
 
     public List<int> ranses = new List<int>();
+
+    public AudioClip audioClip;
+    public AudioSource audioSource;
 
     private void Start()
     {
@@ -92,10 +94,12 @@ public class MultiBingoManager : MonoBehaviour
         //ずっと、whileになって、応答なしになる
         while (roulette)
         {
+            audioSource.PlayOneShot(audioClip);
+            //フラッシュしている間に、PlayOneShotとかでずっと、SEを鳴らし続ける
             int r = Random.Range(0,numbers.Count);
             _numberText.text = numbers[r].ToString();//ランダムで止まった数字と、リストで青色になった数字が違う
             //Appear()で   _numberText.text = i.ToString();が殺されてしまっている
-            yield return new WaitForSeconds(0.1f);//ちょっと遅い
+            yield return new WaitForSeconds(0.08f);//ちょっと遅い
         }
         //While(roulette)の処理が終わったら、以下実行される
         _numberText.text = ransu.ToString();

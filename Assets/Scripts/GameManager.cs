@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
     public GameObject reachPanel;
     public GameObject bingoPanel;
 
+    public GameObject finishPanel;
+
     List<int> numbers = new List<int>();
 
     public List<int> ranses = new List<int>();
@@ -156,8 +158,14 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.8f);
 
-        bingoPanel.SetActive(false);
+        finishPanel.SetActive(true);
+        //bingoPanel.SetActive(false);
 
+    }
+
+    public void OnFinishBackBUtton()
+    {
+        SceneManager.LoadScene("Title");
     }
 
     public void InvokeBingoPanel()

@@ -11,9 +11,11 @@ public class OptionManager : MonoBehaviour
     public AudioSource audioSourceBGM;
     public AudioSource audioSourceSE;
     public AudioClip [] audioClipsSE;
-    public Text bingoNumberText;
+    //public Text bingoNumberText;
+    //public Text bgmVolumeText;
+    //public Text seVolumeText;
 
- 
+
     public static OptionManager instance;
 
     private void Awake()
@@ -30,6 +32,10 @@ public class OptionManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        //audioSourceBGM.volume *= 10;//0.5*10にして、5にしてから、ToString();しようと思ったけど、見た目では「1」と表示される
+        //bgmVolumeText.text = audioSourceBGM.volume.ToString();
+        //seVolumeText.text = audioSourceSE.volume.ToString();
+
     }
     //シングルトン終わり
 
@@ -76,7 +82,7 @@ public class OptionManager : MonoBehaviour
         if (maxNumber <= 75 && maxNumber > 25)
         {
             maxNumber--;
-            bingoNumberText.text = maxNumber.ToString();
+            //bingoNumberText.text = maxNumber.ToString();
             Debug.Log("左ボタン");
         }
         
@@ -87,7 +93,7 @@ public class OptionManager : MonoBehaviour
         if (maxNumber < 75 && maxNumber >= 25)
         {
             maxNumber++;
-            bingoNumberText.text = maxNumber.ToString();
+            //bingoNumberText.text = maxNumber.ToString();
             Debug.Log("右ボタン");
         }
         
