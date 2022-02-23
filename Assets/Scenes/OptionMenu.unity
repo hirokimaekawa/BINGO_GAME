@@ -2997,6 +2997,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bingoNumberText: {fileID: 631508649}
+  bgmVolumeText: {fileID: 1270747713}
+  seVolumeText: {fileID: 1222196108}
 --- !u!4 &2059717889
 Transform:
   m_ObjectHideFlags: 0

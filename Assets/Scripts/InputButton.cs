@@ -9,9 +9,11 @@ public class InputButton : MonoBehaviour
  
     public int number;
 
+    Animator animator;
+
     private void Start()
     {
-       
+        animator = GetComponent<Animator>();
     }
 
     //bool isBingo = false;
@@ -30,6 +32,17 @@ public class InputButton : MonoBehaviour
         //}
         if (number == gameManager.ransu)
         {
+            float x = Time.time;
+            //2秒間押されなかったら
+            //このthis.gameobjectをハイライトする
+            if (x > 2.0)
+            {
+                //遷移する
+                //animator.SetTrigger("ZoomOut");
+            }
+
+
+            //押されたら、以下の処理をする
             GetComponent<Image>().color = Color.cyan;
             //Startボタンを表示する
             gameManager.startButton.SetActive(true);

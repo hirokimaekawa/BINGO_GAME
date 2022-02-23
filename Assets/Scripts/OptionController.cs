@@ -22,30 +22,33 @@ public class OptionController : MonoBehaviour
     public void OnBGMVolumeUp()
     {
         OptionManager.instance.OnBGMVolumeUp();
-        bgmVolumeText.text = OptionManager.instance.audioSourceBGM.volume.ToString();//ここのvolumeを*10したい。
+        bgmVolumeText.text = ((int)(OptionManager.instance.audioSourceBGM.volume*10)).ToString();
         //*10したやつを、ToString()で表記したい
     }
 
     public void OnBGMVolumeDown()
     {
         OptionManager.instance.OnBGMVolumeDown();
+        bgmVolumeText.text = ((int)(OptionManager.instance.audioSourceBGM.volume * 10)).ToString();
     }
 
     public void OnSoundVolumeUp()
     {
         OptionManager.instance.OnSoundVolumeUp();
-        
+        seVolumeText.text = ((int)(OptionManager.instance.audioSourceSE.volume * 10)).ToString();
     }
 
     public void OnSoundVolumeDown()
     {
         OptionManager.instance.OnSoundVolumeDown();
+        seVolumeText.text = ((int)(OptionManager.instance.audioSourceSE.volume * 10)).ToString();
     }
 
     public void OnBingoNumberReduce()
     {
         OptionManager.instance.OnBingoNumberReduce();
         bingoNumberText.text = OptionManager.instance.maxNumber.ToString();
+        OptionManager.instance.OnButtonSE();
 
     }
 
@@ -53,6 +56,7 @@ public class OptionController : MonoBehaviour
     {
         OptionManager.instance.OnBingoumberIncrease();
         bingoNumberText.text = OptionManager.instance.maxNumber.ToString();
+        OptionManager.instance.OnButtonSE();
     }
 
     public void OnStopFlashButton()

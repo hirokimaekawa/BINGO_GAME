@@ -34,6 +34,10 @@ public class GameManager : MonoBehaviour
 
     public GameObject finishPanel;
 
+    public GameObject rulePanel;
+
+
+
     List<int> numbers = new List<int>();
 
     public List<int> ranses = new List<int>();
@@ -176,5 +180,18 @@ public class GameManager : MonoBehaviour
     public void onBackButton()
     {
         SceneManager.LoadScene("Title");
+    }
+    public void OnShowRuleButtonOn()
+    {
+        Debug.Log("押した");
+        rulePanel.SetActive(true);
+    }
+    public void OnShowRuleButtonOff()
+    {
+        rulePanel.SetActive(false); 
+    }
+    public void RuleOffButton()
+    {
+        rulePanel.SetActive(false);
     }
 }
