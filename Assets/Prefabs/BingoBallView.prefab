@@ -119,11 +119,11 @@ MonoBehaviour:
   _currentBallPosition: 0
   inputPanel: {fileID: 0}
   sprite:
-  - {fileID: 21300000, guid: 949e6ac00b0d3ea4190cf03ad7f6fbf9, type: 3}
-  - {fileID: 21300000, guid: 024b77e0fcc9b3a448981d2b0bdaa68b, type: 3}
-  - {fileID: 21300000, guid: 7ee9f57477c1db54283b6d06bbcd64be, type: 3}
-  - {fileID: 21300000, guid: 48642fedf6e113a40b37f84057363368, type: 3}
-  - {fileID: 21300000, guid: 504580a53c79c78418bd4b26241bda8a, type: 3}
+  - {fileID: 21300000, guid: ef0a2cd9bfa734a02bc0bf978da666aa, type: 3}
+  - {fileID: 21300000, guid: 6f1c5b68f8a52482186d2339c9678f46, type: 3}
+  - {fileID: 21300000, guid: 0e7d5a7e20d3440cbb83189f11494e7c, type: 3}
+  - {fileID: 21300000, guid: b28e3b41cd9134e439e6b0bd1d6c69e7, type: 3}
+  - {fileID: 21300000, guid: f0cfbe3e624464fdc97253b3a8e9d81d, type: 3}
 --- !u!114 &8446990581444740159
 MonoBehaviour:
   m_ObjectHideFlags: 0

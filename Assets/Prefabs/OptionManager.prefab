@@ -49,17 +49,11 @@ MonoBehaviour:
   audioSourceBGM: {fileID: 2537314745572932565}
   audioSourceSE: {fileID: 4478651096949882907}
   audioClipsSE:
-  - {fileID: 8300000, guid: 78309cfdd0c014a5da8cf6ce3fe528b5, type: 3}
-  - {fileID: 8300000, guid: e35422de44936453aa14d2137f11380e, type: 3}
-  - {fileID: 8300000, guid: e0735c19274dd48ceb7658026ea91f1f, type: 3}
+  - {fileID: 8300000, guid: f835fbfa7f2474fcfa0e28178bc9adbc, type: 3}
+  - {fileID: 8300000, guid: 2814f703b8c4f478da891baf807e11bc, type: 3}
+  - {fileID: 8300000, guid: 1a569b99e4d3d41b5b01f1967f6959c6, type: 3}
   - {fileID: 8300000, guid: 986022c228aad4e1f932d24bd5cc5b55, type: 3}
   - {fileID: 8300000, guid: 939a49a9eb41a4356be0d9b57f091094, type: 3}
-  bingoNumberText: {fileID: 2779911012059829530, guid: 43e225a909cc646fb9cb8156f6b25fed,
-    type: 3}
-  bgmVolumeText: {fileID: 6357216668009101432, guid: e3310bc2bafb64e67bb2465609261d21,
-    type: 3}
-  seVolumeText: {fileID: 7623321297775083348, guid: d6672a4f4c39b49e08f225f8fd7af34f,
-    type: 3}
 --- !u!82 &2537314745572932565
 AudioSource:
   m_ObjectHideFlags: 0
@@ -70,7 +64,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a6e61f6002b9b4340aba2030a38e9f44, type: 3}
+  m_audioClip: {fileID: 8300000, guid: dc346f32b60f14e308d23812cffcd016, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1

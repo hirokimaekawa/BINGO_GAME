@@ -11,18 +11,46 @@ public class InputButton : MonoBehaviour
 
     Animator animator;
 
+    GameManager gameManager;
+    float x;
+
     private void Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         animator = GetComponent<Animator>();
     }
 
     //bool isBingo = false;
 
-   
+    bool wasTapped;
+
+    private void Update()
+    {
+        if (wasTapped)
+        {
+            return;
+        }
+        if (number == gameManager.ransu)
+        {
+            x += Time.deltaTime;
+            //Debug.Log(Time.time);
+            //2秒間経ってもボタンが押されなかったら
+            //このthis.gameobjectをハイライトする
+            //なおかつ、
+            if (x > 2.0)
+            {
+                //animator.enabled = true;
+                //遷移する
+                
+                animator.SetBool("ZoomOut", true);
+            }
+        }
+
+    }
+
     public void OnThis()
     {
-      
-        GameManager gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
         //プレハブ自身が持つImageコンポーネントのColor要素の変更
         InputPanel inputPanel = GameObject.Find("InputPanel").GetComponent<InputPanel>();
         
@@ -32,15 +60,8 @@ public class InputButton : MonoBehaviour
         //}
         if (number == gameManager.ransu)
         {
-            float x = Time.time;
-            //2秒間押されなかったら
-            //このthis.gameobjectをハイライトする
-            if (x > 2.0)
-            {
-                //遷移する
-                //animator.SetTrigger("ZoomOut");
-            }
-
+            wasTapped = true;
+            animator.SetBool("ZoomOut", false);
 
             //押されたら、以下の処理をする
             GetComponent<Image>().color = Color.cyan;

@@ -94,9 +94,11 @@ public class GameManager : MonoBehaviour
         //inputPanelはNull
         Debug.Log(inputPanel);
         Debug.Log(inputPanel.panelRausuList);
+        //このpanelRausuListには、panelRansuが入っている
         if (inputPanel.panelRausuList.Contains(ransu))
         {
             startButton.SetActive(false);
+            //そのransuと一致したpanelRausuListのpanelRansuが反映されたButtonプレハブ
         }
         else
         {
