@@ -55,6 +55,8 @@ public class InputPanel : MonoBehaviour
 
         }
 
+        Debug.Log(count);
+
 
         while (count-- > 0)
         {

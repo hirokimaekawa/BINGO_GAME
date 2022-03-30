@@ -11,6 +11,8 @@ public class InputButton : MonoBehaviour
 
     Animator animator;
 
+    Canvas canvas;
+
     GameManager gameManager;
     float x;
 
@@ -18,6 +20,7 @@ public class InputButton : MonoBehaviour
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         animator = GetComponent<Animator>();
+        canvas = GetComponent<Canvas>();
     }
 
     //bool isBingo = false;
@@ -28,6 +31,7 @@ public class InputButton : MonoBehaviour
     {
         if (wasTapped)
         {
+            canvas.overrideSorting = false;
             return;
         }
         if (number == gameManager.ransu)
@@ -37,12 +41,19 @@ public class InputButton : MonoBehaviour
             //2秒間経ってもボタンが押されなかったら
             //このthis.gameobjectをハイライトする
             //なおかつ、
-            if (x > 2.0)
+            if (x > 4.0 && gameManager.isAppear == false)
             {
-                //animator.enabled = true;
-                //遷移する
                 
-                animator.SetBool("ZoomOut", true);
+                    canvas.overrideSorting = true;
+                    //animator.enabled = true;
+                    //遷移する
+
+                    animator.SetBool("ZoomOut", true);
+                //もし、リストが表示されたら(listのactiveselfがtrueなら)、canvas.overrideSorting = false
+            }
+            if (gameManager.isAppear == true)
+            {
+                canvas.overrideSorting = false;
             }
         }
 
