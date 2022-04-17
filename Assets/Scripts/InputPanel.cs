@@ -9,6 +9,7 @@ public class InputPanel : MonoBehaviour
     //なんで、defaultって入るのか？→ネットでは、値がどの条件値にも当てはまらない場合の処理を、switch文で書きたい時に使うのがdefault
 
     [SerializeField] GameObject BingoButtonPrefab = default;
+    [SerializeField] GameObject BingoButtonCenterPrefab;
 
     //public OptionManager optionManager;
 
@@ -63,6 +64,7 @@ public class InputPanel : MonoBehaviour
 
             int index = Random.Range(0, numbers.Count);
 
+            //panelRansuは実際の数字
             panelRansu = numbers[index];
             Debug.Log(panelRansu);
             //ここで、panelRansuをListに入れる
@@ -70,16 +72,33 @@ public class InputPanel : MonoBehaviour
             //Debug.Log(panelRansu);
             numbers.Remove(panelRansu);
             //Debug.Log(panelRansu);
-            GameObject buttonObj = Instantiate(BingoButtonPrefab, transform);
-
-            buttonObj.GetComponentInChildren<Text>().text = panelRansu.ToString();
-            buttonObj.GetComponent<InputButton>().number = panelRansu;
+            if (count == 12)
+            {
+                Instantiate(BingoButtonCenterPrefab, transform);
+                //count == 12に関しては、ここで処理終了
+                continue;
+            }
+            else
+            {
+                CreateButtonAndString();
+            }
+         
         }
 
         //Debug.Log(numbers[0]);
         //panelRansuは、パネル1個1個の数字、panelRansuそのものが数字
         //Debug.Log(panelRansu);
 
+    }
+
+ 
+
+    void CreateButtonAndString()
+    {
+        GameObject buttonObj = Instantiate(BingoButtonPrefab, transform);
+
+        buttonObj.GetComponentInChildren<Text>().text = panelRansu.ToString();
+        buttonObj.GetComponent<InputButton>().number = panelRansu;
     }
 
 

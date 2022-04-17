@@ -90,15 +90,19 @@ public class BingoBallView : MonoBehaviour
   
         i = number;
 
+        //ガチャって出てくる方のビンゴボールのテキスト【4/8】
         _numberText.text = i.ToString();
         //Debug.Log(i);
-
+        //固定で表示されているビンゴボールのテキスト【4/8】
         GameObject.Find("BingoNumber/Text").GetComponent<Text>().text = i.ToString();
         Image image = GetComponent<Image>();
         gameObject.SetActive(true);
 
         //基本的に、Unity.EngineのRandom.Rangeという認識
         image.sprite = sprite[UnityEngine.Random.Range(0, sprite.Length)];
+
+        //(順番逆だけど)ランダムで決まったこれを、BingoNumbetのspriteに入れる
+        GameObject.Find("BingoNumber").GetComponent<Image>().sprite = image.sprite;
 
         //image.color = colors[UnityEngine.Random.Range(0, colors.Length)];
         _animator.SetInteger(MoveToNextPositionAnimationParameterName, _currentBallPosition);

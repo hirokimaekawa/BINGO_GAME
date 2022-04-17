@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject rulePanel;
 
-
+    bool isTouch = false;
 
     List<int> numbers = new List<int>();
 
@@ -72,38 +72,52 @@ public class GameManager : MonoBehaviour
 
     public void OnStartButton()
     {
-        Debug.Log("スタートボタンが押された");
-         for (int i = balls.Length-1; i>=0 ;i--)
-         {
-            if (balls[i].gameObject.activeSelf == true)
+        if (isTouch == false)
+        {
+            
+            Debug.Log("スタートボタンが押された");
+            for (int i = balls.Length - 1; i >= 0; i--)
             {
-                balls[i].MoveToNextPosition();
-                continue;//SpawnBall関数の処理終わり →一個飛ばす
+                if (balls[i].gameObject.activeSelf == true)
+                {
+                    balls[i].MoveToNextPosition();
+                    continue;//SpawnBall関数の処理終わり →一個飛ばす
+                }
+                //ここで乱数が決まっている
+                int index = Random.Range(0, numbers.Count);
+                ransu = numbers[index];
+                SpawnBall(i, ransu);
             }
-            //ここで乱数が決まっている
-            int index = Random.Range(0, numbers.Count);
-            ransu = numbers[index];
-            SpawnBall(i, ransu);            
-        }
-        //Listを作ってransuを記録する
-        ranses.Add(ransu);
-        numbers.Remove(ransu);
-        //Debug.Log(ransu);
-        bingoListPanel.ChangeColor(ransu-1);
+            //Listを作ってransuを記録する
+            ranses.Add(ransu);
+            numbers.Remove(ransu);
+            //Debug.Log(ransu);
+            bingoListPanel.ChangeColor(ransu - 1);
 
-        //inputPanelはNull
-        Debug.Log(inputPanel);
-        Debug.Log(inputPanel.panelRausuList);
-        //このpanelRausuListには、panelRansuが入っている
-        if (inputPanel.panelRausuList.Contains(ransu))
-        {
-            startButton.SetActive(false);
-            //そのransuと一致したpanelRausuListのpanelRansuが反映されたButtonプレハブ
+            //inputPanelはNull
+            Debug.Log(inputPanel);
+            Debug.Log(inputPanel.panelRausuList);
+            //このpanelRausuListには、panelRansuが入っている
+
+            StartCoroutine("Touch");
+
+            if (inputPanel.panelRausuList.Contains(ransu))
+            {
+                startButton.SetActive(false);
+                //そのransuと一致したpanelRausuListのpanelRansuが反映されたButtonプレハブ
+            }
+            else
+            {
+                startButton.SetActive(true);
+            }
         }
-        else
-        {
-            startButton.SetActive(true);
-        }
+    }
+
+    IEnumerator Touch()
+    {
+        isTouch = true;
+        yield return new WaitForSeconds(0.5f);
+        isTouch = false;
     }
 
     public bool isAppear;
