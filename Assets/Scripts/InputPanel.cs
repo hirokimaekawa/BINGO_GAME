@@ -116,6 +116,14 @@ public class InputPanel : MonoBehaviour
             {
                 return false;
             }
+
+            //12番目に格納された要素はすでにボタンをタッチされたと同じ扱いをしてtrueにする（4/17）
+            //⇨しかし、これをやっても、多分スクショの①のようになる
+            //Countは要素数の取得だから違う
+            if (panelRausuList.Count == 12)
+            {
+                return true;
+            }
         }
         OptionManager.instance.OnBingoSE();
         gameManager.InvokeBingoPanel();
@@ -144,6 +152,9 @@ public class InputPanel : MonoBehaviour
             {
                 return false;
             }
+            //{
+            //    return true;
+            //}
         }
         //number = 0の時
         OptionManager.instance.OnReachSE();
