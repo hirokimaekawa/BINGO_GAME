@@ -24,13 +24,17 @@ public class GameManager : MonoBehaviour
 
     public BingoListPanel bingoListPanel;
 
-    public GameObject bingoPanelPrefab;
+   // public GameObject bingoPanelPrefab;
 
     public GameObject startButton;
     public GameObject listPanel;
 
     public GameObject reachPanel;
     public GameObject bingoPanel;
+
+    public GameObject bingoEffect;
+    public GameObject bingoEffectSpot;
+
 
     public GameObject finishPanel;
 
@@ -86,6 +90,8 @@ public class GameManager : MonoBehaviour
                 //ここで乱数が決まっている
                 int index = Random.Range(0, numbers.Count);
                 ransu = numbers[index];
+                //☆に該当するransuは除いて、引数に当てはめたい【4/27】 =>12番目のransu
+                //RemoveAt(12);//12番を飛ばして、新しくリストを作った方が良いのか？
                 SpawnBall(i, ransu);
             }
             //Listを作ってransuを記録する
@@ -176,6 +182,13 @@ public class GameManager : MonoBehaviour
     {
         bingoPanel.SetActive(true);
 
+        //Instantiate(bingoEffect, bingoEffectSpot.transform.position,transform.rotation); //1回目
+
+        GameObject obj = (GameObject)Instantiate(bingoEffect, this.transform.position,transform.rotation);　//2回目 古い情報なのかもしれない
+        //https://clrmemory.com/programming/unity/child-obj-prefub/
+        //型変換しているのは、その後、Instantiateした後、Object型では操作できないため
+
+        obj.transform.parent = bingoEffectSpot.transform;
         yield return new WaitForSeconds(0.8f);
 
         finishPanel.SetActive(true);

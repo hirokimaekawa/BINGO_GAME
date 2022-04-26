@@ -111,6 +111,10 @@ public class InputPanel : MonoBehaviour
     {
         for (int i = 0; i < 5; i++)
         {
+            if (i + 5 * col == 12)
+            {
+                continue;//パスする
+            }
             //aNumberの要素番号とpanelRausuListの要素番号が一致する
             if (!gameManager.ranses.Contains(panelRausuList[i + 5 * col]))
             {
@@ -120,10 +124,7 @@ public class InputPanel : MonoBehaviour
             //12番目に格納された要素はすでにボタンをタッチされたと同じ扱いをしてtrueにする（4/17）
             //⇨しかし、これをやっても、多分スクショの①のようになる
             //Countは要素数の取得だから違う
-            if (panelRausuList.Count == 12)
-            {
-                return true;
-            }
+            
         }
         OptionManager.instance.OnBingoSE();
         gameManager.InvokeBingoPanel();
@@ -143,6 +144,11 @@ public class InputPanel : MonoBehaviour
         //colは、列のこと？
         for (int i = 0; i < 5; i++)
         {
+            if (i + 5 * col == 12)
+            {
+                continue;//パスする
+            }
+
             if (number == i)
             {
                 continue;//iを飛ばしている。
@@ -152,6 +158,7 @@ public class InputPanel : MonoBehaviour
             {
                 return false;
             }
+            //if (panelRausuList.IndexOf())
             //{
             //    return true;
             //}
@@ -174,6 +181,10 @@ public class InputPanel : MonoBehaviour
         }
         for (int i = 0; i < 5; i++)
         {
+            if (5 * i + row == 12)
+            {
+                continue;//パスする
+            }
             if (number == i)
             {
                 continue;
@@ -183,6 +194,7 @@ public class InputPanel : MonoBehaviour
             {
                 return false; 
             }
+
         }
        
         OptionManager.instance.OnReachSE();
@@ -196,7 +208,11 @@ public class InputPanel : MonoBehaviour
     {
         for (int i = 0; i < 5; i++)
         {
-            
+            if (5 * i + row == 12)
+            {
+                continue;//パスする
+            }
+
             if (!gameManager.ranses.Contains(panelRausuList[5 * i + row]))
             {
                 return false;
@@ -212,7 +228,12 @@ public class InputPanel : MonoBehaviour
     {
         for (int i = 0; i < 5; i++)
         {
-          
+
+            if (6 * i == 12)
+            {
+                continue;//パスする
+            }
+
             if (!gameManager.ranses.Contains(panelRausuList[6 * i]))
             {
                 return false;
@@ -233,6 +254,10 @@ public class InputPanel : MonoBehaviour
         }
         for (int i = 0; i < 5; i++)
         {
+            if (6 * i == 12)
+            {
+                continue;//パスする
+            }
 
             if (number == i)
             {
@@ -259,6 +284,11 @@ public class InputPanel : MonoBehaviour
         
         for (int i = 0; i < 5; i++)
         {
+            if (4 * i + 4 == 12)
+            {
+                continue;//パスする
+            }
+
             if (!gameManager.ranses.Contains(panelRausuList[4 * i + 4]))
             {
                 return false; 
@@ -278,6 +308,11 @@ public class InputPanel : MonoBehaviour
 
         for (int i = 0; i < 5; i++)
         {
+            if (4 * i + 4 == 12)
+            {
+                continue;//パスする
+            }
+
             if (number == i)
             {
                 continue;
