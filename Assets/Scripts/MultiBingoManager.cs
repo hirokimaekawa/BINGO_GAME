@@ -33,6 +33,12 @@ public class MultiBingoManager : MonoBehaviour
     public GameObject startButton;
     public GameObject stopButton;
     public GameObject listPanel;
+    public GameObject backButton;
+    public GameObject listButton;
+
+
+    public GameObject toTitleButton;
+    public GameObject retryButton;
 
     List<int> numbers = new List<int>();
 
@@ -40,6 +46,8 @@ public class MultiBingoManager : MonoBehaviour
 
     public AudioClip audioClip;
     public AudioSource audioSource;
+
+    bool canTouch = false;
 
     private void Start()
     {
@@ -54,38 +62,52 @@ public class MultiBingoManager : MonoBehaviour
         {
             numbers.Add(i);
         }
+        Debug.Log("numbersは" + numbers.Count + "個");
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (numbers.Count == 0)
+        {
+            startButton.SetActive(false);
+            stopButton.SetActive(false);
+            backButton.SetActive(false);
+            listButton.SetActive(false);
+            //listPanel.SetActive(true);
+            toTitleButton.SetActive(true);
+            retryButton.SetActive(true);
+        }
     }
 
     bool roulette = false;
     public void OnStartButton()
     {
-        Debug.Log("スタートボタンが押された");
-        StopAllCoroutines();
-        StartCoroutine(NumberSelection());
-        int index = Random.Range(0, numbers.Count);
-       
-        ransu = numbers[index];
+        
+            Debug.Log("スタートボタンが押された");
+            StopAllCoroutines();
+            StartCoroutine(NumberSelection());
+            int index = Random.Range(0, numbers.Count);
 
-        //Listを作ってransuを記録する
-        ranses.Add(ransu);
-        Appear(ransu);
-        Debug.Log(ransu);
-        //bingoListPanel.ChangeColor(ransu - 1);
-    
-        Debug.Log(ransu);
+            ransu = numbers[index];
 
-        Debug.Log("ビンゴパネル"+bingoListPanel);
-        startButton.SetActive(false);
-        stopButton.SetActive(true);
+            //Listを作ってransuを記録する
+            ranses.Add(ransu);
+            Appear(ransu);
+            Debug.Log(ransu);
+            //bingoListPanel.ChangeColor(ransu - 1);
+
+            Debug.Log(ransu);
+
+           
+
+            Debug.Log("ビンゴパネル" + bingoListPanel);
+            startButton.SetActive(false);
+           
         //ここで、Ransuをランダム表示させるコードが必要
-       
+        StartCoroutine(CanTouch());
+        
     }
 
     IEnumerator NumberSelection()
@@ -116,14 +138,30 @@ public class MultiBingoManager : MonoBehaviour
         gameObject.SetActive(true);
     }
 
+    //スタートを押して1秒後に、canTouchできるようにしていつでも、ストップ押せるようにする
     public void OnStopButton()
     {
-        roulette = false;
-        Appear(ransu);
-        bingoListPanel.ChangeColor(ransu - 1);
-        numbers.Remove(ransu);
-        stopButton.SetActive(false);
-        startButton.SetActive(true);
+        //if (canTouch == true)
+        //{
+           
+            roulette = false;
+            Appear(ransu);
+            bingoListPanel.ChangeColor(ransu - 1);
+            numbers.Remove(ransu);
+            Debug.Log("numbersは" + numbers.Count + "個");
+            stopButton.SetActive(false);
+            
+            startButton.SetActive(true);
+            //canTouch = false;
+        //}
+    }
+
+    IEnumerator CanTouch()
+    {
+        //canTouch = true;
+        yield return new WaitForSeconds(1.5f);
+        //canTouch = true;
+        stopButton.SetActive(true);
     }
 
     public bool isAppear;
@@ -144,6 +182,16 @@ public class MultiBingoManager : MonoBehaviour
             isAppear = true;
         }
         Debug.Log("リストのアクティブセルフは:" + listPanel.activeSelf);
+    }
+
+    public void TitleButton()
+    {
+        SceneManager.LoadScene("Title");
+    }
+
+    public void RetryButton()
+    {
+        SceneManager.LoadScene("MultiBingo");
     }
   
 }

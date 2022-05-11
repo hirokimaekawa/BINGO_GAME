@@ -75,7 +75,8 @@ public class InputButton : MonoBehaviour
             animator.SetBool("ZoomOut", false);
 
             //押されたら、以下の処理をする
-            GetComponent<Image>().color = Color.cyan;
+            //GetComponent<Image>().color = Color.magenta;
+            GetComponent<Image>().sprite = Resources.Load<Sprite>("TouchedButton");
             //Startボタンを表示する
             gameManager.startButton.SetActive(true);
             //isBingo = true;

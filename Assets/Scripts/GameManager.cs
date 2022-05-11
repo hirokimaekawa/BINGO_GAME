@@ -105,9 +105,10 @@ public class GameManager : MonoBehaviour
             Debug.Log(inputPanel.panelRausuList);
             //このpanelRausuListには、panelRansuが入っている
 
-            StartCoroutine("Touch");
+            StartCoroutine(Touch());
 
-            if (inputPanel.panelRausuList.Contains(ransu))
+            Debug.Log("調べる！"+inputPanel.panelRausuList[12]);
+            if (inputPanel.panelRausuList.Contains(ransu)&& inputPanel.panelRausuList[12] != ransu)
             {
                 startButton.SetActive(false);
                 //そのransuと一致したpanelRausuListのpanelRansuが反映されたButtonプレハブ
@@ -182,15 +183,17 @@ public class GameManager : MonoBehaviour
     {
         bingoPanel.SetActive(true);
 
+        //
         //Instantiate(bingoEffect, bingoEffectSpot.transform.position,transform.rotation); //1回目
 
-        GameObject obj = (GameObject)Instantiate(bingoEffect, this.transform.position,transform.rotation);　//2回目 古い情報なのかもしれない
+        　//2回目 古い情報なのかもしれない
         //https://clrmemory.com/programming/unity/child-obj-prefub/
         //型変換しているのは、その後、Instantiateした後、Object型では操作できないため
 
-        obj.transform.parent = bingoEffectSpot.transform;
+        
         yield return new WaitForSeconds(0.8f);
 
+        Instantiate(bingoEffect, bingoEffectSpot.transform.position, Quaternion.identity, bingoEffectSpot.transform);
         finishPanel.SetActive(true);
         //bingoPanel.SetActive(false);
 

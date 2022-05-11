@@ -42,7 +42,7 @@ public class BingoListPanel : MonoBehaviour
         Debug.Log(index);
         //bingoPanelListが０になっている
         Debug.Log(bingoPanelList.Count);
-        bingoPanelList[index].GetComponent<Image>().color = Color.cyan;
+        bingoPanelList[index].GetComponent<Image>().color = Color.magenta;
         
     }
 
