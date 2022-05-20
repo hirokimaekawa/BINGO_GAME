@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 5907667911749344804}
   - component: {fileID: 5907667911749344803}
   - component: {fileID: 5907667911749344802}
+  - component: {fileID: 7416267903705454347}
   m_Layer: 5
   m_Name: BingoPanelButton
   m_TagString: Untagged
@@ -200,3 +201,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7416267903705454347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5907667911749344800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eb72ef11a1ac474d9cb7d94bf8d5dae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

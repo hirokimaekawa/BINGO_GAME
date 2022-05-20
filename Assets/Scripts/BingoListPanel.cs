@@ -42,8 +42,10 @@ public class BingoListPanel : MonoBehaviour
         Debug.Log(index);
         //bingoPanelListが０になっている
         Debug.Log(bingoPanelList.Count);
+        //マゼンタに変えていた
         bingoPanelList[index].GetComponent<Image>().color = Color.magenta;
-        
+        //GetComponent<Image>().sprite = Resources.Load<Sprite>("TouchedButton");
+
     }
 
     // Update is called once per frame

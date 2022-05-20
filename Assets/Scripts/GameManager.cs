@@ -23,11 +23,14 @@ public class GameManager : MonoBehaviour
     public InputPanel inputPanel;
 
     public BingoListPanel bingoListPanel;
+    public BingoPanelButton bingoPanelButton;
 
-   // public GameObject bingoPanelPrefab;
+    // public GameObject bingoPanelPrefab;
 
     public GameObject startButton;
     public GameObject listPanel;
+    public GameObject bingoListCard;
+    public GameObject listFalseButton;
 
     public GameObject reachPanel;
     public GameObject bingoPanel;
@@ -39,6 +42,8 @@ public class GameManager : MonoBehaviour
     public GameObject finishPanel;
 
     public GameObject rulePanel;
+
+    public GameObject titleBackQuestion;
 
     bool isTouch = false;
 
@@ -98,7 +103,8 @@ public class GameManager : MonoBehaviour
             ranses.Add(ransu);
             numbers.Remove(ransu);
             //Debug.Log(ransu);
-            bingoListPanel.ChangeColor(ransu - 1);
+            //bingoListPanel.ChangeColor(ransu - 1);
+            bingoPanelButton.ChangeSprite(ransu - 1);
 
             //inputPanelはNull
             Debug.Log(inputPanel);
@@ -130,17 +136,35 @@ public class GameManager : MonoBehaviour
     public bool isAppear;
     public void OnListButton()
     {
-        if (isAppear)
+        if (!isAppear)
         {
-            listPanel.SetActive(false);
-            isAppear = false;
-        }
-        else if (!isAppear)
-        {
+            bingoListCard.SetActive(true);
+            listFalseButton.SetActive(true);
             listPanel.SetActive(true);
             isAppear = true;
         }
+        
+    }
 
+
+    public void FalseListButton()
+    {
+        bingoListCard.SetActive(false);
+        listFalseButton.SetActive(false);
+        listPanel.SetActive(false);
+        isAppear = false;
+    }
+
+    public void NoBackButton()
+    {
+        titleBackQuestion.SetActive(false);
+        isAppear = false;
+    }
+
+    public void ReallyBackQuestion()
+    {
+        titleBackQuestion.SetActive(true);
+        isAppear = true;
     }
 
     void SpawnBall(int index,int number)
