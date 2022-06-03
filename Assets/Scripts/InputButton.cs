@@ -41,7 +41,7 @@ public class InputButton : MonoBehaviour
             //2秒間経ってもボタンが押されなかったら
             //このthis.gameobjectをハイライトする
             //なおかつ、
-            if (x > 4.0 && gameManager.isAppear == false)
+            if (x > 3.0 && gameManager.isAppear == false)
             {
                 
                     canvas.overrideSorting = true;
@@ -58,6 +58,8 @@ public class InputButton : MonoBehaviour
         }
 
     }
+
+    [SerializeField] Sprite touchButtonSprite;
 
     public void OnThis()
     {
@@ -76,7 +78,8 @@ public class InputButton : MonoBehaviour
 
             //押されたら、以下の処理をする
             //GetComponent<Image>().color = Color.magenta;
-            GetComponent<Image>().sprite = Resources.Load<Sprite>("TouchedButton");
+            //GetComponent<Image>().sprite = Resources.Load<Sprite>("TouchedButton");
+            GetComponent<Image>().sprite = touchButtonSprite;
             //Startボタンを表示する
             gameManager.startButton.SetActive(true);
             //isBingo = true;

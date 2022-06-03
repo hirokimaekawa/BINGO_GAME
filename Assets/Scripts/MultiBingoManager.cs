@@ -10,12 +10,8 @@ public class MultiBingoManager : MonoBehaviour
 
     [SerializeField] Text _numberText;
 
-    //①MultiBingo用のBingoBallViewを別に作る必要があるか
-
-    //[SerializeField] BingoBallView bingoBallView;
-
     int minNumber = 1;
-    int maxNumber = 75;
+    //int maxNumber = 75;
     public int i;
 
 
@@ -24,21 +20,23 @@ public class MultiBingoManager : MonoBehaviour
 
     public int ransu;
 
-    //public InputPanel inputPanel;
-
     public BingoListPanel bingoListPanel;
-
-    //public GameObject bingoPanelPrefab;
 
     public GameObject startButton;
     public GameObject stopButton;
     public GameObject listPanel;
+    public GameObject bingoListCard;
+    public GameObject listFalseButton;
     public GameObject backButton;
     public GameObject listButton;
 
 
     public GameObject toTitleButton;
     public GameObject retryButton;
+    public GameObject finishPanel;
+
+    public GameObject titleBackQuestion;
+
 
     List<int> numbers = new List<int>();
 
@@ -47,15 +45,11 @@ public class MultiBingoManager : MonoBehaviour
     public AudioClip audioClip;
     public AudioSource audioSource;
 
-    bool canTouch = false;
+    //bool canTouch = false;
 
     private void Start()
     {
-        //そもそも、なんでここに書いたんだろう？
-        //だって、このランダムを固定するのは、InputPanelでのパネルをSpwanする時の話。
-        //
-        //Random.InitState(10);
-
+        
         OptionManager.instance.Load();
         Debug.Log("GameManagerのMaxNumberは" + OptionManager.instance.maxNumber);
         for (int i = minNumber; i <= OptionManager.instance.maxNumber; i++)
@@ -75,36 +69,20 @@ public class MultiBingoManager : MonoBehaviour
             stopButton.SetActive(false);
             backButton.SetActive(false);
             listButton.SetActive(false);
-            //listPanel.SetActive(true);
-            toTitleButton.SetActive(true);
-            retryButton.SetActive(true);
+            finishPanel.SetActive(true);
         }
     }
 
     bool roulette = false;
     public void OnStartButton()
     {
-        
-            Debug.Log("スタートボタンが押された");
-            StopAllCoroutines();
-            StartCoroutine(NumberSelection());
-            int index = Random.Range(0, numbers.Count);
-
-            ransu = numbers[index];
-
-            //Listを作ってransuを記録する
-            ranses.Add(ransu);
-            Appear(ransu);
-            Debug.Log(ransu);
-            //bingoListPanel.ChangeColor(ransu - 1);
-
-            Debug.Log(ransu);
-
-           
-
-            Debug.Log("ビンゴパネル" + bingoListPanel);
-            startButton.SetActive(false);
-           
+        StopAllCoroutines();
+        StartCoroutine(NumberSelection());
+        int index = Random.Range(0, numbers.Count);
+        ransu = numbers[index];
+        ranses.Add(ransu);
+        Appear(ransu);
+        startButton.SetActive(false);
         //ここで、Ransuをランダム表示させるコードが必要
         StartCoroutine(CanTouch());
         
@@ -131,8 +109,7 @@ public class MultiBingoManager : MonoBehaviour
     void Appear(int number)
     {
         number = i;
-        //Debug.Log(i);
-
+       
         GameObject.Find("BingoNumber/Text").GetComponent<Text>().text = i.ToString();
         Image image = GetComponent<Image>();
         gameObject.SetActive(true);
@@ -141,47 +118,57 @@ public class MultiBingoManager : MonoBehaviour
     //スタートを押して1秒後に、canTouchできるようにしていつでも、ストップ押せるようにする
     public void OnStopButton()
     {
-        //if (canTouch == true)
-        //{
-           
-            roulette = false;
-            Appear(ransu);
-            bingoListPanel.ChangeColor(ransu - 1);
-            numbers.Remove(ransu);
-            Debug.Log("numbersは" + numbers.Count + "個");
-            stopButton.SetActive(false);
+        
+        roulette = false;
+        
+        stopButton.SetActive(false);
+        startButton.SetActive(true);
+       
+        bingoListPanel.ChangeColor(ransu - 1);
+       
+        Appear(ransu);
             
-            startButton.SetActive(true);
-            //canTouch = false;
-        //}
+        numbers.Remove(ransu);
+       
     }
 
     IEnumerator CanTouch()
     {
-        //canTouch = true;
         yield return new WaitForSeconds(1.5f);
-        //canTouch = true;
         stopButton.SetActive(true);
     }
 
     public bool isAppear;
     public void OnListButton()
-    {
-        Debug.Log("リストを押した");
-        Debug.Log(isAppear);//false
-        
-        if (isAppear)
-        { 
-            listPanel.SetActive(false);
-            isAppear = false;
-        }
-        else if (!isAppear)
+    { 
+        if (!isAppear)
         {
-        
+            bingoListCard.SetActive(true);
+            listFalseButton.SetActive(true);
             listPanel.SetActive(true);
             isAppear = true;
         }
-        Debug.Log("リストのアクティブセルフは:" + listPanel.activeSelf);
+        
+    }
+
+    public void FalseListButton()
+    {
+        bingoListCard.SetActive(false);
+        listFalseButton.SetActive(false);
+        listPanel.SetActive(false);
+        isAppear = false;
+    }
+
+    public void NoBackButton()
+    {
+        titleBackQuestion.SetActive(false);
+        isAppear = false;
+    }
+
+    public void ReallyBackQuestion()
+    {
+        titleBackQuestion.SetActive(true);
+        isAppear = true;
     }
 
     public void TitleButton()

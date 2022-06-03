@@ -34,12 +34,6 @@ public class RuleManager : MonoBehaviour
         singleBingoPanel.SetActive(true);
         singleBingoImage_1.SetActive(true);
 
-
-        //singleBingoButton.GetComponent<Image>().color = Color.blue;
-        //multiBingoButton.GetComponent<Image>().color = Color.white;
-        //multiBingoPanel.SetActive(false);
-        //singleBingoPanel.SetActive(true);
-
     }
 
     public void OnSingleBingoImage_1()
@@ -57,10 +51,6 @@ public class RuleManager : MonoBehaviour
     {
         multiBingoPanel.SetActive(true);
         multiBingoImage_1.SetActive(true);
-        //singleBingoButton.GetComponent<Image>().color = Color.white;
-        //multiBingoButton.GetComponent<Image>().color = Color.blue;
-        //singleBingoPanel.SetActive(false);
-        //multiBingoPanel.SetActive(true);
     }
 
     public void OnMultiBingoImage_1()

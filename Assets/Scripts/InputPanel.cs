@@ -11,10 +11,6 @@ public class InputPanel : MonoBehaviour
     [SerializeField] GameObject BingoButtonPrefab = default;
     [SerializeField] GameObject BingoButtonCenterPrefab;
 
-    //public OptionManager optionManager;
-
-    //[SerializeField] Text bingoNumberText;
-
     int minNumber = 1;
     int maxNumber = 75;
     int count = 25;
@@ -25,7 +21,7 @@ public class InputPanel : MonoBehaviour
 
     public List<int> panelRausuList = new List<int>();
 
-    //public List<int> aNumber = new List<int>();
+   
 
     public GameManager gameManager;
 
@@ -38,11 +34,9 @@ public class InputPanel : MonoBehaviour
 
     private void Start()
     {
-        //こっちに書いても、GameManagerでの挙動と同じだった。
-        //Random.InitState(10);
+       
         OptionManager.instance.Load();
-        Debug.Log("InputPanelのMaxNumberは" + OptionManager.instance.maxNumber);
-
+       
         Invoke("SwapnPanel", 0.1f);
         
     }
@@ -56,9 +50,6 @@ public class InputPanel : MonoBehaviour
 
         }
 
-        Debug.Log(count);
-
-
         while (count-- > 0)
         {
 
@@ -66,7 +57,7 @@ public class InputPanel : MonoBehaviour
 
             //panelRansuは実際の数字
             panelRansu = numbers[index];
-            Debug.Log(panelRansu);
+          
             //ここで、panelRansuをListに入れる
             panelRausuList.Add(panelRansu);
             //Debug.Log(panelRansu);
@@ -84,10 +75,6 @@ public class InputPanel : MonoBehaviour
             }
          
         }
-
-        //Debug.Log(numbers[0]);
-        //panelRansuは、パネル1個1個の数字、panelRansuそのものが数字
-        //Debug.Log(panelRansu);
 
     }
 
@@ -121,10 +108,7 @@ public class InputPanel : MonoBehaviour
                 return false;
             }
 
-            //12番目に格納された要素はすでにボタンをタッチされたと同じ扱いをしてtrueにする（4/17）
-            //⇨しかし、これをやっても、多分スクショの①のようになる
-            //Countは要素数の取得だから違う
-            
+           
         }
         OptionManager.instance.OnBingoSE();
         gameManager.InvokeBingoPanel();
@@ -139,9 +123,7 @@ public class InputPanel : MonoBehaviour
         {
             return true;
         }
-        //この辺、もう一度確認
-        //numberは5回ループさせて、チェックするということ？
-        //colは、列のこと？
+    
         for (int i = 0; i < 5; i++)
         {
             if (i + 5 * col == 12)
@@ -158,11 +140,9 @@ public class InputPanel : MonoBehaviour
             {
                 return false;
             }
-            //if (panelRausuList.IndexOf())
-            //{
-            //    return true;
-            //}
+           
         }
+
         //number = 0の時
         OptionManager.instance.OnReachSE();
         gameManager.InvokeReachPanel();
@@ -246,7 +226,7 @@ public class InputPanel : MonoBehaviour
 
     bool CheckCrossReach_0(int number)
     {
-        Debug.Log("CheckCross0_1");
+        //Debug.Log("CheckCross0_1");
 
         if (reachCrossFlag[0])
         {

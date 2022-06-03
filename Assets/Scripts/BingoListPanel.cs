@@ -9,20 +9,17 @@ public class BingoListPanel : MonoBehaviour
 
     int minNumber = 1;
 
-    int maxNumber = 75;
+    //int maxNumber = 75;
     public GameObject bingoPanelPrefab;
 
-    //ゆくゆく設定で、ビンゴの数を変更するから配列ではなく、List
+
     public List<GameObject> bingoPanelList = new List<GameObject>();
 
-    //非表示だから、まだ実行されていない
+   
     // Start is called before the first frame update
     void Awake()
     {
         OptionManager.instance.Load();
-        //ここだけ、Debugができていない『なんでだろう？』
-        Debug.Log("BingoListPanelのMaxNumberは" + OptionManager.instance.maxNumber);
-
         for (int i = minNumber; i <= OptionManager.instance.maxNumber; i++)
         {
             GameObject buttonObj = Instantiate(bingoPanelPrefab, transform);
@@ -38,13 +35,9 @@ public class BingoListPanel : MonoBehaviour
     }
 
     public void ChangeColor(int index)
-    {
-        Debug.Log(index);
-        //bingoPanelListが０になっている
-        Debug.Log(bingoPanelList.Count);
-        //マゼンタに変えていた
-        bingoPanelList[index].GetComponent<Image>().color = Color.magenta;
-        //GetComponent<Image>().sprite = Resources.Load<Sprite>("TouchedButton");
+    { 
+        //bingoPanelList[index].GetComponent<Image>().sprite = Resources.Load<Sprite>("TouchedButton");
+        bingoPanelList[index].GetComponent<Image>().color = new Color(1,1,1,1);
 
     }
 

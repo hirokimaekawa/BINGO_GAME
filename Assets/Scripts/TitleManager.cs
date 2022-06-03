@@ -5,9 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class TitleManager : MonoBehaviour
 {
-    //DontDestrotyしているのは、inspectorに格納しないほうがいい
-    //public OptionManager optionManager;
-   
+    
     // Start is called before the first frame update
     void Start()
     {

@@ -6,13 +6,11 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 { 
     [SerializeField] BallGenerator ballGenerator;
-    //
+    
     BingoBallView []balls = new BingoBallView[7];
 
-    //[SerializeField] BingoBallView bingoBallView;
-
     int minNumber = 1;
-    int maxNumber = 75;
+    //int maxNumber = 75;
 
 
     public static GameManager instance;
@@ -23,9 +21,6 @@ public class GameManager : MonoBehaviour
     public InputPanel inputPanel;
 
     public BingoListPanel bingoListPanel;
-    public BingoPanelButton bingoPanelButton;
-
-    // public GameObject bingoPanelPrefab;
 
     public GameObject startButton;
     public GameObject listPanel;
@@ -53,30 +48,19 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        //そもそも、なんでここに書いたんだろう？
-        //だって、このランダムを固定するのは、InputPanelでのパネルをSpwanする時の話。
-        //
-        //Random.InitState(10);
-
+       
         OptionManager.instance.Load();
-        Debug.Log("GameManagerのMaxNumberは" + OptionManager.instance.maxNumber);
+        //Debug.Log("GameManagerのMaxNumberは" + OptionManager.instance.maxNumber);
         for (int i = minNumber; i <= OptionManager.instance.maxNumber; i++)
         { 
             numbers.Add(i);
         }
-
 
         //Spawn関数を実行することで、returnしたやつが代入される
         for (int i = 0;i<balls.Length;i++)
         {
             balls[i] = ballGenerator.Spawn();
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void OnStartButton()
@@ -95,29 +79,23 @@ public class GameManager : MonoBehaviour
                 //ここで乱数が決まっている
                 int index = Random.Range(0, numbers.Count);
                 ransu = numbers[index];
-                //☆に該当するransuは除いて、引数に当てはめたい【4/27】 =>12番目のransu
-                //RemoveAt(12);//12番を飛ばして、新しくリストを作った方が良いのか？
+                
                 SpawnBall(i, ransu);
             }
+
             //Listを作ってransuを記録する
             ranses.Add(ransu);
             numbers.Remove(ransu);
-            //Debug.Log(ransu);
-            //bingoListPanel.ChangeColor(ransu - 1);
-            bingoPanelButton.ChangeSprite(ransu - 1);
-
-            //inputPanelはNull
-            Debug.Log(inputPanel);
-            Debug.Log(inputPanel.panelRausuList);
-            //このpanelRausuListには、panelRansuが入っている
+      
+            bingoListPanel.ChangeColor(ransu - 1);
+           
 
             StartCoroutine(Touch());
 
-            Debug.Log("調べる！"+inputPanel.panelRausuList[12]);
             if (inputPanel.panelRausuList.Contains(ransu)&& inputPanel.panelRausuList[12] != ransu)
             {
                 startButton.SetActive(false);
-                //そのransuと一致したpanelRausuListのpanelRansuが反映されたButtonプレハブ
+               
             }
             else
             {
@@ -174,7 +152,6 @@ public class GameManager : MonoBehaviour
         if (index == 0)
         {
             balls[index].Appear(number);
-            //numbers.Remove(ransu);
         }
         else 
         {
@@ -182,7 +159,6 @@ public class GameManager : MonoBehaviour
             if (balls[index - 1].gameObject.activeSelf == true)
             {
                 balls[index].Appear(number);
-                //numbers.Remove(ransu);
             }
       
         }
@@ -207,19 +183,10 @@ public class GameManager : MonoBehaviour
     {
         bingoPanel.SetActive(true);
 
-        //
-        //Instantiate(bingoEffect, bingoEffectSpot.transform.position,transform.rotation); //1回目
-
-        　//2回目 古い情報なのかもしれない
-        //https://clrmemory.com/programming/unity/child-obj-prefub/
-        //型変換しているのは、その後、Instantiateした後、Object型では操作できないため
-
-        
         yield return new WaitForSeconds(0.8f);
 
         Instantiate(bingoEffect, bingoEffectSpot.transform.position, Quaternion.identity, bingoEffectSpot.transform);
         finishPanel.SetActive(true);
-        //bingoPanel.SetActive(false);
 
     }
 
@@ -239,7 +206,6 @@ public class GameManager : MonoBehaviour
     }
     public void OnShowRuleButtonOn()
     {
-        Debug.Log("押した");
         rulePanel.SetActive(true);
     }
     public void OnShowRuleButtonOff()

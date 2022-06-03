@@ -11,18 +11,13 @@ public class OptionManager : MonoBehaviour
     public AudioSource audioSourceBGM;
     public AudioSource audioSourceSE;
     public AudioClip [] audioClipsSE;
-    //public Text bingoNumberText;
-    //public Text bgmVolumeText;
-    //public Text seVolumeText;
-
+  
 
     public static OptionManager instance;
 
     private void Awake()
     {
-        //このセーブ（Awake）シングルトンのクラスの場合、いつ発動しているんだろう？
-        //コメントアウトしたら、InspectorのmaxNumberが、0になっている
-        //Save();
+        
         if (instance == null)
         {
             instance = this;
@@ -32,21 +27,15 @@ public class OptionManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        //audioSourceBGM.volume *= 10;//0.5*10にして、5にしてから、ToString();しようと思ったけど、見た目では「1」と表示される
-        //bgmVolumeText.text = audioSourceBGM.volume.ToString();
-        //seVolumeText.text = audioSourceSE.volume.ToString();
+      
 
     }
-    //シングルトン終わり
-
+   
     // Start is called before the first frame update
     void Start()
-    {
-        //Titleから始めると、ここでエラーが生じている。OptionManagerのinspectorに何も入っていない状態だから
-        audioSourceSE.PlayOneShot(audioClipsSE[2]);
-       
+    { 
+        audioSourceSE.PlayOneShot(audioClipsSE[2]); 
         maxNumber = 75;
-        //bingoNumberText.text = maxNumber.ToString();
     }
 
     // Update is called once per frame
@@ -83,7 +72,7 @@ public class OptionManager : MonoBehaviour
         {
             maxNumber--;
             //bingoNumberText.text = maxNumber.ToString();
-            Debug.Log("左ボタン");
+            //Debug.Log("左ボタン");
         }
         
     }
@@ -94,7 +83,7 @@ public class OptionManager : MonoBehaviour
         {
             maxNumber++;
             //bingoNumberText.text = maxNumber.ToString();
-            Debug.Log("右ボタン");
+            //Debug.Log("右ボタン");
         }
         
     }
@@ -109,7 +98,7 @@ public class OptionManager : MonoBehaviour
     public void OnBackButton()
     {
         Save();
-        Debug.Log(maxNumber);
+        //Debug.Log(maxNumber);
         SceneManager.LoadScene("Title");
     }
 
