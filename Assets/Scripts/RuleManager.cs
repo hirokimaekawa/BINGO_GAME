@@ -31,6 +31,7 @@ public class RuleManager : MonoBehaviour
 
     public void OnSinglePanelButton()
     {
+        OptionManager.instance.OnButtonSE();
         singleBingoPanel.SetActive(true);
         singleBingoImage_1.SetActive(true);
 
@@ -38,35 +39,41 @@ public class RuleManager : MonoBehaviour
 
     public void OnSingleBingoImage_1()
     {
+        OptionManager.instance.OnButtonSE();
         singleBingoImage_1.SetActive(false);
         singleBingoImage_2.SetActive(true);
     }
     public void OnSingleBingoImage_2()
     {
+        OptionManager.instance.OnButtonSE();
         singleBingoImage_2.SetActive(false);
         singleBingoPanel.SetActive(false);
     }
 
     public void OnMultiPanelButton()
     {
+        OptionManager.instance.OnButtonSE();
         multiBingoPanel.SetActive(true);
         multiBingoImage_1.SetActive(true);
     }
 
     public void OnMultiBingoImage_1()
     {
+        OptionManager.instance.OnButtonSE();
         multiBingoImage_1.SetActive(false);
         multiBingoImage_2.SetActive(true);
     }
 
     public void OnMultiBingoImage_2()
     {
+        OptionManager.instance.OnButtonSE();
         multiBingoImage_2.SetActive(false);
         multiBingoPanel.SetActive(false);
     }
 
     public void OnBackButton()
     {
+        OptionManager.instance.OnButtonSE();
         SceneManager.LoadScene("Title");
     }
 }

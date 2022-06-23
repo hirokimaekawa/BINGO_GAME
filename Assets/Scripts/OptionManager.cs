@@ -34,7 +34,7 @@ public class OptionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     { 
-        audioSourceSE.PlayOneShot(audioClipsSE[2]); 
+        //audioSourceSE.PlayOneShot(audioClipsSE[2]); 
         maxNumber = 75;
     }
 

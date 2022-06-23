@@ -8,20 +8,14 @@ public class MultiBingoBallView : MonoBehaviour
     [SerializeField] Text _numberText;
     public int i;
 
-    //private Image _ballImage;
-
-
     public int _currentBallPosition;
-
-
-    //private AudioSource _audioSource;
 
     public static MultiBingoBallView instance;
 
     OptionManager optionManager;
 
     int minNumber = 1;
-    int maxNumber = 75;
+    //int maxNumber = 75;
     List<int> numbers = new List<int>();
 
     // Start is called before the first frame update
@@ -29,12 +23,9 @@ public class MultiBingoBallView : MonoBehaviour
     {
         //プレハブには、ヒエラルキーからアタッチできないから、GetComponent<OptionManager>()をつけることで、左右の変数の型を揃えている
         optionManager = GameObject.Find("OptionManager").GetComponent<OptionManager>();
-        // image.color = Random.ColorHSV(1,1,1,1);
-        //UnityEngine.Random
-        //★★ゆくゆくmaxNumber→optionManager.maxNumberへ
-
+       
         optionManager.Load();
-        Debug.Log("BingoBallViewのMaxNumberは" + optionManager.maxNumber);
+        //Debug.Log("BingoBallViewのMaxNumberは" + optionManager.maxNumber);
 
         for (int i = minNumber; i <= optionManager.maxNumber; i++)
         {

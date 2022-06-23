@@ -23,40 +23,41 @@ public class InputButton : MonoBehaviour
         canvas = GetComponent<Canvas>();
     }
 
-    //bool isBingo = false;
-
     bool wasTapped;
 
     private void Update()
     {
         if (wasTapped)
         {
-            canvas.overrideSorting = false;
+            Invoke("DeleteOverride",1.0f);
+            //canvas.overrideSorting = false;
             return;
         }
         if (number == gameManager.ransu)
         {
             x += Time.deltaTime;
-            //Debug.Log(Time.time);
-            //2秒間経ってもボタンが押されなかったら
-            //このthis.gameobjectをハイライトする
-            //なおかつ、
+           
             if (x > 3.0 && gameManager.isAppear == false)
             {
                 
                     canvas.overrideSorting = true;
-                    //animator.enabled = true;
-                    //遷移する
-
+                    
                     animator.SetBool("ZoomOut", true);
-                //もし、リストが表示されたら(listのactiveselfがtrueなら)、canvas.overrideSorting = false
+               
             }
             if (gameManager.isAppear == true)
             {
-                canvas.overrideSorting = false;
+                //canvas.overrideSorting = false;
             }
         }
 
+    }
+
+    //新しく作った
+    public void DeleteOverride()
+    {
+        canvas.overrideSorting = false;
+        Debug.Log("ちゃんと動いてる");
     }
 
     [SerializeField] Sprite touchButtonSprite;
@@ -67,7 +68,7 @@ public class InputButton : MonoBehaviour
         //プレハブ自身が持つImageコンポーネントのColor要素の変更
         InputPanel inputPanel = GameObject.Find("InputPanel").GetComponent<InputPanel>();
         
-        Debug.Log(number);
+        //Debug.Log(number);
         //GetComponent<Image>().color = Color.cyan;
 
         //}
@@ -75,10 +76,9 @@ public class InputButton : MonoBehaviour
         {
             wasTapped = true;
             animator.SetBool("ZoomOut", false);
+            //このZoomOutがfalseになっただけではなく、アニメーションも終わった後に、overrideをfalseにしたい
+            //canvas.overrideSorting = false;
 
-            //押されたら、以下の処理をする
-            //GetComponent<Image>().color = Color.magenta;
-            //GetComponent<Image>().sprite = Resources.Load<Sprite>("TouchedButton");
             GetComponent<Image>().sprite = touchButtonSprite;
             //Startボタンを表示する
             gameManager.startButton.SetActive(true);

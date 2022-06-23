@@ -9,11 +9,16 @@ public class CameraStableAspect : MonoBehaviour
     [SerializeField]
     Camera refCamera;
 
-    [SerializeField]
-    int width = 1920;
+    //[SerializeField] int width = 1920;
 
     [SerializeField]
-    int height = 1080;
+    int width = 1080;
+
+
+
+    //[SerializeField] int height = 1080;
+    [SerializeField]
+    int height = 1920;
 
     [SerializeField]
     float pixelPerUnit = 100f;

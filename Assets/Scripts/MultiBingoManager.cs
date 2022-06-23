@@ -140,7 +140,8 @@ public class MultiBingoManager : MonoBehaviour
 
     public bool isAppear;
     public void OnListButton()
-    { 
+    {
+        OptionManager.instance.OnButtonSE();
         if (!isAppear)
         {
             bingoListCard.SetActive(true);
@@ -153,6 +154,7 @@ public class MultiBingoManager : MonoBehaviour
 
     public void FalseListButton()
     {
+        OptionManager.instance.OnButtonSE();
         bingoListCard.SetActive(false);
         listFalseButton.SetActive(false);
         listPanel.SetActive(false);
@@ -161,23 +163,27 @@ public class MultiBingoManager : MonoBehaviour
 
     public void NoBackButton()
     {
+        OptionManager.instance.OnButtonSE();
         titleBackQuestion.SetActive(false);
         isAppear = false;
     }
 
     public void ReallyBackQuestion()
     {
+        OptionManager.instance.OnButtonSE();
         titleBackQuestion.SetActive(true);
         isAppear = true;
     }
 
     public void TitleButton()
     {
+        OptionManager.instance.OnButtonSE();
         SceneManager.LoadScene("Title");
     }
 
     public void RetryButton()
     {
+        OptionManager.instance.OnButtonSE();
         SceneManager.LoadScene("MultiBingo");
     }
   

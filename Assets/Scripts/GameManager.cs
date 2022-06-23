@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour
 
     public void OnStartButton()
     {
+        OptionManager.instance.OnButtonSE();
         if (isTouch == false)
         {
             
@@ -114,6 +115,7 @@ public class GameManager : MonoBehaviour
     public bool isAppear;
     public void OnListButton()
     {
+        OptionManager.instance.OnButtonSE();
         if (!isAppear)
         {
             bingoListCard.SetActive(true);
@@ -127,6 +129,7 @@ public class GameManager : MonoBehaviour
 
     public void FalseListButton()
     {
+        OptionManager.instance.OnButtonSE();
         bingoListCard.SetActive(false);
         listFalseButton.SetActive(false);
         listPanel.SetActive(false);
@@ -135,12 +138,14 @@ public class GameManager : MonoBehaviour
 
     public void NoBackButton()
     {
+        OptionManager.instance.OnButtonSE();
         titleBackQuestion.SetActive(false);
         isAppear = false;
     }
 
     public void ReallyBackQuestion()
     {
+        OptionManager.instance.OnButtonSE();
         titleBackQuestion.SetActive(true);
         isAppear = true;
     }
@@ -192,6 +197,7 @@ public class GameManager : MonoBehaviour
 
     public void OnFinishBackBUtton()
     {
+        OptionManager.instance.OnButtonSE();
         SceneManager.LoadScene("Title");
     }
 
@@ -202,18 +208,22 @@ public class GameManager : MonoBehaviour
 
     public void onBackButton()
     {
+        OptionManager.instance.OnButtonSE();
         SceneManager.LoadScene("Title");
     }
     public void OnShowRuleButtonOn()
     {
+        OptionManager.instance.OnButtonSE();
         rulePanel.SetActive(true);
     }
     public void OnShowRuleButtonOff()
     {
+        OptionManager.instance.OnButtonSE();
         rulePanel.SetActive(false); 
     }
     public void RuleOffButton()
     {
+        OptionManager.instance.OnButtonSE();
         rulePanel.SetActive(false);
     }
 }

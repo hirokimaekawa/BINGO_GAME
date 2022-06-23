@@ -19,6 +19,7 @@ public class OptionController : MonoBehaviour
 
     public void OnBackButton()
     {
+        OptionManager.instance.OnButtonSE();
         OptionManager.instance.OnBackButton();
     }
 
