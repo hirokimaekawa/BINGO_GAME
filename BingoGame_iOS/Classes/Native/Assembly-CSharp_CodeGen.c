@@ -1,0 +1,727 @@
+﻿#include "pch-c.h"
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
+
+#include "codegen/il2cpp-codegen-metadata.h"
+
+
+
+
+
+// 0x00000001 System.Void AdMobBanner::Start()
+extern void AdMobBanner_Start_m738885673B5579D9D12F7721B1B2C745A8C8C66C (void);
+// 0x00000002 System.Void AdMobBanner::BannerStart()
+extern void AdMobBanner_BannerStart_m36F2288D35E004FB753B27B10740E123F811DF7B (void);
+// 0x00000003 System.Void AdMobBanner::BannerDestroy()
+extern void AdMobBanner_BannerDestroy_m51CC2DE5C9C905E083FDAAF1748325951073A438 (void);
+// 0x00000004 System.Void AdMobBanner::RequestBanner()
+extern void AdMobBanner_RequestBanner_m6C87059367AB7CA7917831AB5A5AB0A960EB9BBF (void);
+// 0x00000005 System.Void AdMobBanner::HandleAdLoaded(System.Object,System.EventArgs)
+extern void AdMobBanner_HandleAdLoaded_mFB86E19AEE982959C8B5700A67C17273C494567A (void);
+// 0x00000006 System.Void AdMobBanner::HandleAdFailedToLoad(System.Object,GoogleMobileAds.Api.AdFailedToLoadEventArgs)
+extern void AdMobBanner_HandleAdFailedToLoad_m1935D41E566C4653F047F36008E5EAC50F037448 (void);
+// 0x00000007 System.Void AdMobBanner::.ctor()
+extern void AdMobBanner__ctor_m6D107070A7E3F564A160731924D4A78DA45BE188 (void);
+// 0x00000008 System.Void AdMobInterstitial::Start()
+extern void AdMobInterstitial_Start_m0B6DC2C0414DDAAE0794EBC8D6DB1801A5515E4C (void);
+// 0x00000009 System.Void AdMobInterstitial::ShowAdMobInterstitial()
+extern void AdMobInterstitial_ShowAdMobInterstitial_m50F2F7ACD8DDDD0968BAAB5A709A2349D2C97886 (void);
+// 0x0000000A System.Void AdMobInterstitial::RequestInterstitial()
+extern void AdMobInterstitial_RequestInterstitial_mD3E38F584464B4AD0A9DC13C51EB5199B0811EB0 (void);
+// 0x0000000B System.Void AdMobInterstitial::HandleOnAdLoaded(System.Object,System.EventArgs)
+extern void AdMobInterstitial_HandleOnAdLoaded_m8CEBAD5C0C36839F16072EAEDF9A26CC6CA9BC32 (void);
+// 0x0000000C System.Void AdMobInterstitial::HandleOnAdFailedToLoad(System.Object,GoogleMobileAds.Api.AdFailedToLoadEventArgs)
+extern void AdMobInterstitial_HandleOnAdFailedToLoad_m4AB8CA661B17E95151DB05697C1847666107E9FF (void);
+// 0x0000000D System.Void AdMobInterstitial::HandleOnAdClosed(System.Object,System.EventArgs)
+extern void AdMobInterstitial_HandleOnAdClosed_mEC7517909C18E396D2FE0D44E47009180FEF70F2 (void);
+// 0x0000000E System.Void AdMobInterstitial::.ctor()
+extern void AdMobInterstitial__ctor_m9CA682CB9F1AA265412364560DE60D6E7C435D9A (void);
+// 0x0000000F BingoBallView BallGenerator::Spawn()
+extern void BallGenerator_Spawn_m58E1846A82CE1A490CEF4EAD0B2EDAB633DD11BC (void);
+// 0x00000010 System.Void BallGenerator::.ctor()
+extern void BallGenerator__ctor_m5A31E12150FE6C6B22EB0F9ABED7CE72EFEDE150 (void);
+// 0x00000011 System.Void BallImageChanger::Start()
+extern void BallImageChanger_Start_m64FE1915CD9B9783BE5CA43A626B7E428BC126B9 (void);
+// 0x00000012 System.Void BallImageChanger::Update()
+extern void BallImageChanger_Update_m204ABAD379C2AFDE1FF670545CE121B93995D1FC (void);
+// 0x00000013 System.Void BallImageChanger::.ctor()
+extern void BallImageChanger__ctor_mCB59E50B7777F06F77E78E10D878A55861587367 (void);
+// 0x00000014 System.Void BingoBallDisabler::DisableBingoBall()
+extern void BingoBallDisabler_DisableBingoBall_mD2BAAB87F6AFD586D652FA84BED595089EC3E7C4 (void);
+// 0x00000015 System.Void BingoBallDisabler::.ctor()
+extern void BingoBallDisabler__ctor_mECEF0B5AA0CF480F0DE57F03E79277C09C8AE129 (void);
+// 0x00000016 System.Void BingoBallView::Awake()
+extern void BingoBallView_Awake_mA71C50ADB6CF26E66357A29417AA9C9AAB67FA69 (void);
+// 0x00000017 System.Void BingoBallView::Start()
+extern void BingoBallView_Start_m7BDA5E26F95C649DD4C696642E5BD5438534B376 (void);
+// 0x00000018 System.Void BingoBallView::Appear(System.Int32)
+extern void BingoBallView_Appear_m213F8D8FED5A2019695F5B70CC4B4ADF5F0ADD08 (void);
+// 0x00000019 System.Void BingoBallView::Disappear()
+extern void BingoBallView_Disappear_m1575D7DF5349A181BC1431E58140378C35C5CBB9 (void);
+// 0x0000001A System.Void BingoBallView::MoveToNextPosition()
+extern void BingoBallView_MoveToNextPosition_mD7ECCED695C2E91744FCDF2C009317406EFDEDDA (void);
+// 0x0000001B System.Void BingoBallView::Disable()
+extern void BingoBallView_Disable_m2AF502CEEEFB3FAAC7AAF72625366752C36B7CD2 (void);
+// 0x0000001C System.Boolean BingoBallView::get_IsDisabled()
+extern void BingoBallView_get_IsDisabled_m3C51676960B449869C097BEE95DEA6707532E2BF (void);
+// 0x0000001D System.Void BingoBallView::.ctor()
+extern void BingoBallView__ctor_m7F784332FA55CC60F85957944D5B2E652FB29D21 (void);
+// 0x0000001E System.Void BingoListPanel::Awake()
+extern void BingoListPanel_Awake_m29955B96971C55576401AB2B9F928D755536BEEC (void);
+// 0x0000001F System.Void BingoListPanel::Start()
+extern void BingoListPanel_Start_mE3BA79E1A53F7F93CB923CB724B9A05027287621 (void);
+// 0x00000020 System.Void BingoListPanel::ChangeColor(System.Int32)
+extern void BingoListPanel_ChangeColor_mA1238765F8826E25491C497097382F487B0CC1DB (void);
+// 0x00000021 System.Void BingoListPanel::Update()
+extern void BingoListPanel_Update_m0251B50FEC1868729C26C55F32FF337308047734 (void);
+// 0x00000022 System.Void BingoListPanel::.ctor()
+extern void BingoListPanel__ctor_m9A86DA56EECBA0A33AC9DA8F1889F465982BCF73 (void);
+// 0x00000023 System.Void CameraStableAspect::Awake()
+extern void CameraStableAspect_Awake_m328D6571775AEFF6993BE24FE734979086FB8687 (void);
+// 0x00000024 System.Void CameraStableAspect::Update()
+extern void CameraStableAspect_Update_m0D7795A14032553D43ACFC3DC393A98DDC5B80E1 (void);
+// 0x00000025 System.Void CameraStableAspect::UpdateCameraWithCheck()
+extern void CameraStableAspect_UpdateCameraWithCheck_m0949C2CB80D052FF1EAB4D496090678644963454 (void);
+// 0x00000026 System.Void CameraStableAspect::UpdateCamera()
+extern void CameraStableAspect_UpdateCamera_m2E5DB180254849B6439EC7F597399DC8E7B2FCEC (void);
+// 0x00000027 System.Void CameraStableAspect::.ctor()
+extern void CameraStableAspect__ctor_m4BE559EF693F2DA43187D23FBFB07B3BCB02E32C (void);
+// 0x00000028 System.Void GameManager::Start()
+extern void GameManager_Start_m26461AEF27E44DB8FECCBC19D6C9E228B658BF8E (void);
+// 0x00000029 System.Void GameManager::OnStartButton()
+extern void GameManager_OnStartButton_m752DC9CF1041274B3EA33EB004D02CEDD898E10D (void);
+// 0x0000002A System.Collections.IEnumerator GameManager::Touch()
+extern void GameManager_Touch_m95185C5761929ED08EE295DCD5928103DC65F362 (void);
+// 0x0000002B System.Void GameManager::OnListButton()
+extern void GameManager_OnListButton_mD737987AD8783D47506A063B1CE32F1988EAE6B9 (void);
+// 0x0000002C System.Void GameManager::FalseListButton()
+extern void GameManager_FalseListButton_m2A7D45CE87B0D828DE525AF12EA3D55484B5287A (void);
+// 0x0000002D System.Void GameManager::NoBackButton()
+extern void GameManager_NoBackButton_mFF1727B99190FF68810865BD815A7F9E92DE4F4A (void);
+// 0x0000002E System.Void GameManager::ReallyBackQuestion()
+extern void GameManager_ReallyBackQuestion_m5EFFD3C0A7339298D650C7C192774529B65BA127 (void);
+// 0x0000002F System.Void GameManager::SpawnBall(System.Int32,System.Int32)
+extern void GameManager_SpawnBall_m71798AC3217A901B28EDF639CA05EAFCCE0BC043 (void);
+// 0x00000030 System.Collections.IEnumerator GameManager::ShowReachPanel()
+extern void GameManager_ShowReachPanel_m450A9D442E49AC72717C4F5DB1405B782B57BE42 (void);
+// 0x00000031 System.Void GameManager::InvokeReachPanel()
+extern void GameManager_InvokeReachPanel_m4DBA6726F735781D04750AA628B5D5E45ACE86D1 (void);
+// 0x00000032 System.Collections.IEnumerator GameManager::ShowBingoPanel()
+extern void GameManager_ShowBingoPanel_m77EAA397D5323DFBB3859036D0E0DF5E73F3AFE4 (void);
+// 0x00000033 System.Void GameManager::OnFinishBackBUtton()
+extern void GameManager_OnFinishBackBUtton_m6181923E618157777AACC23FC3AFED1621D806A8 (void);
+// 0x00000034 System.Void GameManager::InvokeBingoPanel()
+extern void GameManager_InvokeBingoPanel_m77B8245E638C4BA95C04904BE3A8061915C5B3F1 (void);
+// 0x00000035 System.Void GameManager::onBackButton()
+extern void GameManager_onBackButton_m55AFE653BAD1ADCD9464B83DE316378996AADC6B (void);
+// 0x00000036 System.Void GameManager::OnShowRuleButtonOn()
+extern void GameManager_OnShowRuleButtonOn_mD6B48D227EFA41C60E0DC907B9C29D83CFD5F45B (void);
+// 0x00000037 System.Void GameManager::OnShowRuleButtonOff()
+extern void GameManager_OnShowRuleButtonOff_mF2136E2982FFAFB129399B976EDBBFA5F79A22CC (void);
+// 0x00000038 System.Void GameManager::RuleOffButton()
+extern void GameManager_RuleOffButton_m45D1046D9BD305B5E66322F51624300902C59C6A (void);
+// 0x00000039 System.Void GameManager::.ctor()
+extern void GameManager__ctor_mE8666F6D0CA9C31E16B719F79780DC4B0245B64D (void);
+// 0x0000003A System.Void GameManager/<Touch>d__23::.ctor(System.Int32)
+extern void U3CTouchU3Ed__23__ctor_m71E194781FA583C25CD526E589BEB010C44467DF (void);
+// 0x0000003B System.Void GameManager/<Touch>d__23::System.IDisposable.Dispose()
+extern void U3CTouchU3Ed__23_System_IDisposable_Dispose_m1894BE9998C142BE214AC91167200F887D2E7083 (void);
+// 0x0000003C System.Boolean GameManager/<Touch>d__23::MoveNext()
+extern void U3CTouchU3Ed__23_MoveNext_mFE8EB3C9CEF790170A2F08C521C64CBC02DC4BBB (void);
+// 0x0000003D System.Object GameManager/<Touch>d__23::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CTouchU3Ed__23_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m26563B1FF32121B439BDF44F7AE53F49BC4F69A7 (void);
+// 0x0000003E System.Void GameManager/<Touch>d__23::System.Collections.IEnumerator.Reset()
+extern void U3CTouchU3Ed__23_System_Collections_IEnumerator_Reset_mEFC22C9F628578F6E4534EB9B66D846E80A0E178 (void);
+// 0x0000003F System.Object GameManager/<Touch>d__23::System.Collections.IEnumerator.get_Current()
+extern void U3CTouchU3Ed__23_System_Collections_IEnumerator_get_Current_mB3646292180D5EA1590FD4778DBBFFC3C9056344 (void);
+// 0x00000040 System.Void GameManager/<ShowReachPanel>d__30::.ctor(System.Int32)
+extern void U3CShowReachPanelU3Ed__30__ctor_m3ECD653EE8FF7A2B6B100FA5DD37209EB26CEB41 (void);
+// 0x00000041 System.Void GameManager/<ShowReachPanel>d__30::System.IDisposable.Dispose()
+extern void U3CShowReachPanelU3Ed__30_System_IDisposable_Dispose_m456FB45AAEBD3AE6B6E3EFDC83B533E060430B70 (void);
+// 0x00000042 System.Boolean GameManager/<ShowReachPanel>d__30::MoveNext()
+extern void U3CShowReachPanelU3Ed__30_MoveNext_mED8DB1301BB75E82591ABFDAB86CFBC208231759 (void);
+// 0x00000043 System.Object GameManager/<ShowReachPanel>d__30::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CShowReachPanelU3Ed__30_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m6346A10ABB23A9A7E1D62A7513E1F30ED32A20EF (void);
+// 0x00000044 System.Void GameManager/<ShowReachPanel>d__30::System.Collections.IEnumerator.Reset()
+extern void U3CShowReachPanelU3Ed__30_System_Collections_IEnumerator_Reset_mA1C1370ED332922130840FAFF8ACDCBF4C7A42EB (void);
+// 0x00000045 System.Object GameManager/<ShowReachPanel>d__30::System.Collections.IEnumerator.get_Current()
+extern void U3CShowReachPanelU3Ed__30_System_Collections_IEnumerator_get_Current_m0DA812472EF9E7B5D89D20CADAECF01CE2CF57CF (void);
+// 0x00000046 System.Void GameManager/<ShowBingoPanel>d__32::.ctor(System.Int32)
+extern void U3CShowBingoPanelU3Ed__32__ctor_m6437E92AE5A2B3D237277C0AE620CBB258805130 (void);
+// 0x00000047 System.Void GameManager/<ShowBingoPanel>d__32::System.IDisposable.Dispose()
+extern void U3CShowBingoPanelU3Ed__32_System_IDisposable_Dispose_m7B565425CE2E11A46996E3FF09D709B70800F24A (void);
+// 0x00000048 System.Boolean GameManager/<ShowBingoPanel>d__32::MoveNext()
+extern void U3CShowBingoPanelU3Ed__32_MoveNext_m1C35EC5AE93BB09407F525B2E3D97953722F5048 (void);
+// 0x00000049 System.Object GameManager/<ShowBingoPanel>d__32::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CShowBingoPanelU3Ed__32_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m69B0C3E3282DBE5678141B0525DF4EE15E651836 (void);
+// 0x0000004A System.Void GameManager/<ShowBingoPanel>d__32::System.Collections.IEnumerator.Reset()
+extern void U3CShowBingoPanelU3Ed__32_System_Collections_IEnumerator_Reset_m0FAC8108A1D0326254B6E2F8563F84D5153054F3 (void);
+// 0x0000004B System.Object GameManager/<ShowBingoPanel>d__32::System.Collections.IEnumerator.get_Current()
+extern void U3CShowBingoPanelU3Ed__32_System_Collections_IEnumerator_get_Current_mF1996117F0DA41C9D676E8559523616E362B4197 (void);
+// 0x0000004C System.Void IDFA::_requestIDFA()
+extern void IDFA__requestIDFA_m34B4489232B8F1D2524110B6215A38CEA8537C28 (void);
+// 0x0000004D System.Void IDFA::Start()
+extern void IDFA_Start_m40C0447CA15A002DEE5EC90C3879001A052FBB48 (void);
+// 0x0000004E System.Void IDFA::DelayIDFA()
+extern void IDFA_DelayIDFA_m2F29EC5015CEB2D4EAD0637E2E504561679A920B (void);
+// 0x0000004F System.Void IDFA::.ctor()
+extern void IDFA__ctor_m875FEFA3E857882BA115D257597A692CD2D1871A (void);
+// 0x00000050 System.Void InputButton::Start()
+extern void InputButton_Start_m5310FFAB85723997516F3FC7C43F6124B777B858 (void);
+// 0x00000051 System.Void InputButton::Update()
+extern void InputButton_Update_m435EAF572CA4448F930C74DB760FE54693E1FC85 (void);
+// 0x00000052 System.Void InputButton::OnThis()
+extern void InputButton_OnThis_m9F947A834FFF8B6313F280B78F5CAA7A01780F65 (void);
+// 0x00000053 System.Void InputButton::.ctor()
+extern void InputButton__ctor_mF7B1A14567DFA9E95C6AD997458F18F13B67C478 (void);
+// 0x00000054 System.Void InputPanel::Start()
+extern void InputPanel_Start_m2FAE915328E3C3FCCE40B18B5B343A0F55BBEB35 (void);
+// 0x00000055 System.Void InputPanel::SwapnPanel()
+extern void InputPanel_SwapnPanel_mDC9741B49E4879FE38B08FB98C7176407F46214F (void);
+// 0x00000056 System.Void InputPanel::CreateButtonAndString()
+extern void InputPanel_CreateButtonAndString_m5058841D953B575B111C3F8AC458E4889DD6EF90 (void);
+// 0x00000057 System.Boolean InputPanel::CheckColBingo(System.Int32)
+extern void InputPanel_CheckColBingo_m523BD0FDB561B400006F048E3E51820595AC0D92 (void);
+// 0x00000058 System.Boolean InputPanel::CheckColReach(System.Int32,System.Int32)
+extern void InputPanel_CheckColReach_m6E5B8544519B891471714C1A9D65A7E90ED69C86 (void);
+// 0x00000059 System.Boolean InputPanel::CheckRowReach(System.Int32,System.Int32)
+extern void InputPanel_CheckRowReach_mEF9FD4A005E3A4D4706C033C7B59C844FBE79DB7 (void);
+// 0x0000005A System.Boolean InputPanel::CheckRowBingo(System.Int32)
+extern void InputPanel_CheckRowBingo_m5FAFE2869EE285BFDDF92F705BAFF357408981B9 (void);
+// 0x0000005B System.Boolean InputPanel::CheckCrossBingo_0()
+extern void InputPanel_CheckCrossBingo_0_m21274FB6F9343C460FF2E15AA273054C131FFA6B (void);
+// 0x0000005C System.Boolean InputPanel::CheckCrossReach_0(System.Int32)
+extern void InputPanel_CheckCrossReach_0_m9B59658EA1ADD604A0B3F10C4596706E4EDC7B58 (void);
+// 0x0000005D System.Boolean InputPanel::CheckCrossBingo_4()
+extern void InputPanel_CheckCrossBingo_4_m31D144A092A1707E3EEC3805377174565A6987CE (void);
+// 0x0000005E System.Boolean InputPanel::CheckCrossReach_4(System.Int32)
+extern void InputPanel_CheckCrossReach_4_mB4F3DB365C66E6CE5493187C2ED7E7D1D8362FF9 (void);
+// 0x0000005F System.Void InputPanel::DebugReach()
+extern void InputPanel_DebugReach_m20E9191D8C7D9569D9E6D3ACEB4B7344D1B560DF (void);
+// 0x00000060 System.Boolean InputPanel::DebugBingo()
+extern void InputPanel_DebugBingo_m6B9E63CE7A2EF532D1469C039037709DCF55A4A9 (void);
+// 0x00000061 System.Void InputPanel::.ctor()
+extern void InputPanel__ctor_m0C5CE54F48B4DCF3D457CC5733FC9711C8E2CFA8 (void);
+// 0x00000062 System.Void MultiBingoBallView::Start()
+extern void MultiBingoBallView_Start_m9768747CE1A5E556F9D85B4C04A5322581FBFFB8 (void);
+// 0x00000063 System.Void MultiBingoBallView::Appear(System.Int32)
+extern void MultiBingoBallView_Appear_m2B22F9B720A25D8452FBE6F06AC969A7E54C91AE (void);
+// 0x00000064 System.Void MultiBingoBallView::Update()
+extern void MultiBingoBallView_Update_m16D101960207CBC30DE928AE4A15C2751C63E89E (void);
+// 0x00000065 System.Void MultiBingoBallView::.ctor()
+extern void MultiBingoBallView__ctor_m16F9A5E843D659C735D7D49508FF420171E17A35 (void);
+// 0x00000066 System.Void MultiBingoManager::Start()
+extern void MultiBingoManager_Start_m0F14CAD11B78D23622297424AC06EDD38EC6DE0A (void);
+// 0x00000067 System.Void MultiBingoManager::Update()
+extern void MultiBingoManager_Update_m08EC2B8B6D4F19A8E5C681086B0729D547A0A662 (void);
+// 0x00000068 System.Void MultiBingoManager::OnStartButton()
+extern void MultiBingoManager_OnStartButton_m8D0AD5D0B41AE98CE0B04FFF993C84B1C6B371F3 (void);
+// 0x00000069 System.Collections.IEnumerator MultiBingoManager::NumberSelection()
+extern void MultiBingoManager_NumberSelection_mDE0AFF20CCB4666C21D496A00C045846E2B794BD (void);
+// 0x0000006A System.Void MultiBingoManager::Appear(System.Int32)
+extern void MultiBingoManager_Appear_mD97099BD65CBFD169419B853B644EABF37C4D74B (void);
+// 0x0000006B System.Void MultiBingoManager::OnStopButton()
+extern void MultiBingoManager_OnStopButton_m5A1F91C59CD0E9A70D93D5BB1D4C432ECB1C3DCC (void);
+// 0x0000006C System.Collections.IEnumerator MultiBingoManager::CanTouch()
+extern void MultiBingoManager_CanTouch_m359F10F1BC6AD116A7C9C6628B3B407FC1BB469B (void);
+// 0x0000006D System.Void MultiBingoManager::OnListButton()
+extern void MultiBingoManager_OnListButton_mC5AB1B65E6E416A1EABEF41F0D26583428638ACB (void);
+// 0x0000006E System.Void MultiBingoManager::FalseListButton()
+extern void MultiBingoManager_FalseListButton_m4B18E860E337268BE4794B5F144F2DFF7D2366CB (void);
+// 0x0000006F System.Void MultiBingoManager::NoBackButton()
+extern void MultiBingoManager_NoBackButton_m0EFD0F39812B8D690454ADF6BDDA853129E6E118 (void);
+// 0x00000070 System.Void MultiBingoManager::ReallyBackQuestion()
+extern void MultiBingoManager_ReallyBackQuestion_m6F0DFC4DE89DD97F9841292F8FD1127742D7A993 (void);
+// 0x00000071 System.Void MultiBingoManager::TitleButton()
+extern void MultiBingoManager_TitleButton_m10E047DBBC4E799A5022DAC9F24E43EEB865403C (void);
+// 0x00000072 System.Void MultiBingoManager::RetryButton()
+extern void MultiBingoManager_RetryButton_m4BBA0BEFFBEE638E9AE1D54F0F9D755FF541A851 (void);
+// 0x00000073 System.Void MultiBingoManager::.ctor()
+extern void MultiBingoManager__ctor_m302039B2A3899B329F13299676A556DC19520311 (void);
+// 0x00000074 System.Void MultiBingoManager/<NumberSelection>d__26::.ctor(System.Int32)
+extern void U3CNumberSelectionU3Ed__26__ctor_mB92AB9467565CC16062FE5642AB53ABD40057D44 (void);
+// 0x00000075 System.Void MultiBingoManager/<NumberSelection>d__26::System.IDisposable.Dispose()
+extern void U3CNumberSelectionU3Ed__26_System_IDisposable_Dispose_mBED18D9A4EDDF0F7E392B48270AA7D3F94E39CBB (void);
+// 0x00000076 System.Boolean MultiBingoManager/<NumberSelection>d__26::MoveNext()
+extern void U3CNumberSelectionU3Ed__26_MoveNext_m903E527364FAB985EE9D4F1F86D8F2E4A6EBE671 (void);
+// 0x00000077 System.Object MultiBingoManager/<NumberSelection>d__26::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CNumberSelectionU3Ed__26_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m82045EC541615F8A814B3BA05F427969217C8023 (void);
+// 0x00000078 System.Void MultiBingoManager/<NumberSelection>d__26::System.Collections.IEnumerator.Reset()
+extern void U3CNumberSelectionU3Ed__26_System_Collections_IEnumerator_Reset_mE66F9BF247286ABAD63686E8E5B2F97948A352B6 (void);
+// 0x00000079 System.Object MultiBingoManager/<NumberSelection>d__26::System.Collections.IEnumerator.get_Current()
+extern void U3CNumberSelectionU3Ed__26_System_Collections_IEnumerator_get_Current_m7DAB2E0A0B144ECD697B64C2B28EA6255E61FDD7 (void);
+// 0x0000007A System.Void MultiBingoManager/<CanTouch>d__29::.ctor(System.Int32)
+extern void U3CCanTouchU3Ed__29__ctor_m06BAE57DC6CE9E14328EA576CC1C5AE50F512AF3 (void);
+// 0x0000007B System.Void MultiBingoManager/<CanTouch>d__29::System.IDisposable.Dispose()
+extern void U3CCanTouchU3Ed__29_System_IDisposable_Dispose_mED416DE00D4144F7EEFB7AC3B6FD4695C3CCE16C (void);
+// 0x0000007C System.Boolean MultiBingoManager/<CanTouch>d__29::MoveNext()
+extern void U3CCanTouchU3Ed__29_MoveNext_m9F658067EC89110C176A5F1240336F8AB043D650 (void);
+// 0x0000007D System.Object MultiBingoManager/<CanTouch>d__29::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CCanTouchU3Ed__29_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mC79DA039702207A291FDD1F2FCFEF3B20998B249 (void);
+// 0x0000007E System.Void MultiBingoManager/<CanTouch>d__29::System.Collections.IEnumerator.Reset()
+extern void U3CCanTouchU3Ed__29_System_Collections_IEnumerator_Reset_m21C8D79C4BC120EB4C2E8CE97CE605EA55324D7E (void);
+// 0x0000007F System.Object MultiBingoManager/<CanTouch>d__29::System.Collections.IEnumerator.get_Current()
+extern void U3CCanTouchU3Ed__29_System_Collections_IEnumerator_get_Current_m5DD712422A9F36E6C1D4540123CC7296F1D1BC1E (void);
+// 0x00000080 System.Void OptionController::Start()
+extern void OptionController_Start_mB1E7DD6A03BB53629E5A065FEB52F9C1626DEDB7 (void);
+// 0x00000081 System.Void OptionController::OnBackButton()
+extern void OptionController_OnBackButton_mEB3AA8281FAB5E9EB8CD90D096CD865598689919 (void);
+// 0x00000082 System.Void OptionController::OnBingoSE()
+extern void OptionController_OnBingoSE_mA9A1D2FB1CB007B8FC33720A46057CA4E43E3BD2 (void);
+// 0x00000083 System.Void OptionController::OnBGMVolumeUp()
+extern void OptionController_OnBGMVolumeUp_m4A683D6C830B0F3106F7030044C3FFBC950AF852 (void);
+// 0x00000084 System.Void OptionController::OnBGMVolumeDown()
+extern void OptionController_OnBGMVolumeDown_mF66A5AD7D2819BC5E278C7AC1B0D593F19D1CF7F (void);
+// 0x00000085 System.Void OptionController::OnSoundVolumeUp()
+extern void OptionController_OnSoundVolumeUp_mB3E8E9FC0D5949991AEEDF99C93D5AEF8C2CE62E (void);
+// 0x00000086 System.Void OptionController::OnSoundVolumeDown()
+extern void OptionController_OnSoundVolumeDown_m2C99366879A25AE250FC8EF4598E66208451F8A4 (void);
+// 0x00000087 System.Void OptionController::OnBingoNumberReduce()
+extern void OptionController_OnBingoNumberReduce_mABE0BAF1DA2256B992D4759BC3D969925D40B263 (void);
+// 0x00000088 System.Void OptionController::OnBingoNumberIncrease()
+extern void OptionController_OnBingoNumberIncrease_mC2553D76DABDCF9710E86A908301C1595A6DFF71 (void);
+// 0x00000089 System.Void OptionController::OnStopFlashButton()
+extern void OptionController_OnStopFlashButton_m92A0F0198D75030146B51F1AE0677222B9830833 (void);
+// 0x0000008A System.Void OptionController::.ctor()
+extern void OptionController__ctor_m1C9210D1ECF8B2737298B33CCC6C2DC1008D0CC9 (void);
+// 0x0000008B System.Void OptionManager::Awake()
+extern void OptionManager_Awake_mE48E8DBA6BB89782215F162DD7C6315CEE7C9E6A (void);
+// 0x0000008C System.Void OptionManager::Start()
+extern void OptionManager_Start_m2BC10D71934C6473BB09D06C2E50C89AE8685415 (void);
+// 0x0000008D System.Void OptionManager::Update()
+extern void OptionManager_Update_mEF3BDF0C890BB50D8032B5FAD3F51116CE433477 (void);
+// 0x0000008E System.Void OptionManager::OnBGMVolumeUp()
+extern void OptionManager_OnBGMVolumeUp_mD51BE7F5BE40640E1E24D1DB7720D35EBA0EAB1C (void);
+// 0x0000008F System.Void OptionManager::OnBGMVolumeDown()
+extern void OptionManager_OnBGMVolumeDown_mAD2E6A8B632E3416FB0ADADA344E0B3947AF7804 (void);
+// 0x00000090 System.Void OptionManager::OnSoundVolumeUp()
+extern void OptionManager_OnSoundVolumeUp_m892BF67282B31451300EFD0B56396C2E2E09A976 (void);
+// 0x00000091 System.Void OptionManager::OnSoundVolumeDown()
+extern void OptionManager_OnSoundVolumeDown_m2E44CABE6EC7C850DE0F8746099B8DBD877862D2 (void);
+// 0x00000092 System.Void OptionManager::OnBingoNumberReduce()
+extern void OptionManager_OnBingoNumberReduce_m26524400F475880765E2EBF1EB035E9217C9617D (void);
+// 0x00000093 System.Void OptionManager::OnBingoumberIncrease()
+extern void OptionManager_OnBingoumberIncrease_m4EA4D38FDA24A31817790E166C67B0EB5FB029FC (void);
+// 0x00000094 System.Void OptionManager::OnButtonSE()
+extern void OptionManager_OnButtonSE_mA7F04C13FEBBBC82693F3924E85FE036FA305E4A (void);
+// 0x00000095 System.Void OptionManager::OnBackButton()
+extern void OptionManager_OnBackButton_m5477F561BA7A80292851A206A0CBB3F5E98A662D (void);
+// 0x00000096 System.Void OptionManager::OnReachSE()
+extern void OptionManager_OnReachSE_m0FE91D49757E07E04837B7E9229D47D947404F6D (void);
+// 0x00000097 System.Void OptionManager::OnBingoSE()
+extern void OptionManager_OnBingoSE_m3A7136095F95E4C74D7E93040532F79A576531B6 (void);
+// 0x00000098 System.Void OptionManager::Save()
+extern void OptionManager_Save_m5FCAC84AF8D367BEA556E91F0274B472575FF132 (void);
+// 0x00000099 System.Void OptionManager::Load()
+extern void OptionManager_Load_m0666F936ED276465B95F2E2EEA8F6DA689D4D3C1 (void);
+// 0x0000009A System.Void OptionManager::.ctor()
+extern void OptionManager__ctor_mF7C9174F7B8B37033587879F174391A3A306E996 (void);
+// 0x0000009B System.Void RuleManager::Start()
+extern void RuleManager_Start_m8E77E61D9350FD43186657971CF7718331053FAE (void);
+// 0x0000009C System.Void RuleManager::Update()
+extern void RuleManager_Update_m554BED80532635A5D1242B1499AD67E133CCB061 (void);
+// 0x0000009D System.Void RuleManager::OnSinglePanelButton()
+extern void RuleManager_OnSinglePanelButton_m08D57D477E80E3AFB5B1A9F93D3EDB454A0FAB74 (void);
+// 0x0000009E System.Void RuleManager::OnSingleBingoImage_1()
+extern void RuleManager_OnSingleBingoImage_1_m67EEB47F0D39A8E77191526840F19A354257C356 (void);
+// 0x0000009F System.Void RuleManager::OnSingleBingoImage_2()
+extern void RuleManager_OnSingleBingoImage_2_m75AC69E0F4150D007A0A24B2BF655D3B90BE8F17 (void);
+// 0x000000A0 System.Void RuleManager::OnMultiPanelButton()
+extern void RuleManager_OnMultiPanelButton_m249CB1791770A30B6C4E610C2C323408B5ACB900 (void);
+// 0x000000A1 System.Void RuleManager::OnMultiBingoImage_1()
+extern void RuleManager_OnMultiBingoImage_1_m8811083B890C23F77D297ACA3F9B9DE448495AD3 (void);
+// 0x000000A2 System.Void RuleManager::OnMultiBingoImage_2()
+extern void RuleManager_OnMultiBingoImage_2_m026799228C295C29CEA6ACBE14425B2B3B2B29F2 (void);
+// 0x000000A3 System.Void RuleManager::OnBackButton()
+extern void RuleManager_OnBackButton_m929C7C2F8A04F676E65900DC733A40471E182CDC (void);
+// 0x000000A4 System.Void RuleManager::.ctor()
+extern void RuleManager__ctor_mBF7E77F05376FED419D7FE13466D8AC1045D288A (void);
+// 0x000000A5 System.Void TitleManager::Start()
+extern void TitleManager_Start_mB1BDED26067331336418D8C8F760161E62F96224 (void);
+// 0x000000A6 System.Void TitleManager::Update()
+extern void TitleManager_Update_m3D4B2483A33278FCFEB981AA66D621FDF1A652C7 (void);
+// 0x000000A7 System.Void TitleManager::OnSingleBingoButton()
+extern void TitleManager_OnSingleBingoButton_mC35C926B258EB6156A9E850D50026A4D8D73FC34 (void);
+// 0x000000A8 System.Void TitleManager::OnOptionSceneButton()
+extern void TitleManager_OnOptionSceneButton_m5FEB1C5DAC80892675A8AB5BA68D5D4D269695DC (void);
+// 0x000000A9 System.Void TitleManager::OnMultiBingoButton()
+extern void TitleManager_OnMultiBingoButton_m4634FB23E0D4048A656BF1945473BB05F9581C37 (void);
+// 0x000000AA System.Void TitleManager::OnRuleButton()
+extern void TitleManager_OnRuleButton_mB616DD33630B93776F271FB567D6F66BEA1D9371 (void);
+// 0x000000AB System.Void TitleManager::.ctor()
+extern void TitleManager__ctor_m0D14731249E3B6D0846A587A421CAE4FAD2056D0 (void);
+static Il2CppMethodPointer s_methodPointers[171] = 
+{
+	AdMobBanner_Start_m738885673B5579D9D12F7721B1B2C745A8C8C66C,
+	AdMobBanner_BannerStart_m36F2288D35E004FB753B27B10740E123F811DF7B,
+	AdMobBanner_BannerDestroy_m51CC2DE5C9C905E083FDAAF1748325951073A438,
+	AdMobBanner_RequestBanner_m6C87059367AB7CA7917831AB5A5AB0A960EB9BBF,
+	AdMobBanner_HandleAdLoaded_mFB86E19AEE982959C8B5700A67C17273C494567A,
+	AdMobBanner_HandleAdFailedToLoad_m1935D41E566C4653F047F36008E5EAC50F037448,
+	AdMobBanner__ctor_m6D107070A7E3F564A160731924D4A78DA45BE188,
+	AdMobInterstitial_Start_m0B6DC2C0414DDAAE0794EBC8D6DB1801A5515E4C,
+	AdMobInterstitial_ShowAdMobInterstitial_m50F2F7ACD8DDDD0968BAAB5A709A2349D2C97886,
+	AdMobInterstitial_RequestInterstitial_mD3E38F584464B4AD0A9DC13C51EB5199B0811EB0,
+	AdMobInterstitial_HandleOnAdLoaded_m8CEBAD5C0C36839F16072EAEDF9A26CC6CA9BC32,
+	AdMobInterstitial_HandleOnAdFailedToLoad_m4AB8CA661B17E95151DB05697C1847666107E9FF,
+	AdMobInterstitial_HandleOnAdClosed_mEC7517909C18E396D2FE0D44E47009180FEF70F2,
+	AdMobInterstitial__ctor_m9CA682CB9F1AA265412364560DE60D6E7C435D9A,
+	BallGenerator_Spawn_m58E1846A82CE1A490CEF4EAD0B2EDAB633DD11BC,
+	BallGenerator__ctor_m5A31E12150FE6C6B22EB0F9ABED7CE72EFEDE150,
+	BallImageChanger_Start_m64FE1915CD9B9783BE5CA43A626B7E428BC126B9,
+	BallImageChanger_Update_m204ABAD379C2AFDE1FF670545CE121B93995D1FC,
+	BallImageChanger__ctor_mCB59E50B7777F06F77E78E10D878A55861587367,
+	BingoBallDisabler_DisableBingoBall_mD2BAAB87F6AFD586D652FA84BED595089EC3E7C4,
+	BingoBallDisabler__ctor_mECEF0B5AA0CF480F0DE57F03E79277C09C8AE129,
+	BingoBallView_Awake_mA71C50ADB6CF26E66357A29417AA9C9AAB67FA69,
+	BingoBallView_Start_m7BDA5E26F95C649DD4C696642E5BD5438534B376,
+	BingoBallView_Appear_m213F8D8FED5A2019695F5B70CC4B4ADF5F0ADD08,
+	BingoBallView_Disappear_m1575D7DF5349A181BC1431E58140378C35C5CBB9,
+	BingoBallView_MoveToNextPosition_mD7ECCED695C2E91744FCDF2C009317406EFDEDDA,
+	BingoBallView_Disable_m2AF502CEEEFB3FAAC7AAF72625366752C36B7CD2,
+	BingoBallView_get_IsDisabled_m3C51676960B449869C097BEE95DEA6707532E2BF,
+	BingoBallView__ctor_m7F784332FA55CC60F85957944D5B2E652FB29D21,
+	BingoListPanel_Awake_m29955B96971C55576401AB2B9F928D755536BEEC,
+	BingoListPanel_Start_mE3BA79E1A53F7F93CB923CB724B9A05027287621,
+	BingoListPanel_ChangeColor_mA1238765F8826E25491C497097382F487B0CC1DB,
+	BingoListPanel_Update_m0251B50FEC1868729C26C55F32FF337308047734,
+	BingoListPanel__ctor_m9A86DA56EECBA0A33AC9DA8F1889F465982BCF73,
+	CameraStableAspect_Awake_m328D6571775AEFF6993BE24FE734979086FB8687,
+	CameraStableAspect_Update_m0D7795A14032553D43ACFC3DC393A98DDC5B80E1,
+	CameraStableAspect_UpdateCameraWithCheck_m0949C2CB80D052FF1EAB4D496090678644963454,
+	CameraStableAspect_UpdateCamera_m2E5DB180254849B6439EC7F597399DC8E7B2FCEC,
+	CameraStableAspect__ctor_m4BE559EF693F2DA43187D23FBFB07B3BCB02E32C,
+	GameManager_Start_m26461AEF27E44DB8FECCBC19D6C9E228B658BF8E,
+	GameManager_OnStartButton_m752DC9CF1041274B3EA33EB004D02CEDD898E10D,
+	GameManager_Touch_m95185C5761929ED08EE295DCD5928103DC65F362,
+	GameManager_OnListButton_mD737987AD8783D47506A063B1CE32F1988EAE6B9,
+	GameManager_FalseListButton_m2A7D45CE87B0D828DE525AF12EA3D55484B5287A,
+	GameManager_NoBackButton_mFF1727B99190FF68810865BD815A7F9E92DE4F4A,
+	GameManager_ReallyBackQuestion_m5EFFD3C0A7339298D650C7C192774529B65BA127,
+	GameManager_SpawnBall_m71798AC3217A901B28EDF639CA05EAFCCE0BC043,
+	GameManager_ShowReachPanel_m450A9D442E49AC72717C4F5DB1405B782B57BE42,
+	GameManager_InvokeReachPanel_m4DBA6726F735781D04750AA628B5D5E45ACE86D1,
+	GameManager_ShowBingoPanel_m77EAA397D5323DFBB3859036D0E0DF5E73F3AFE4,
+	GameManager_OnFinishBackBUtton_m6181923E618157777AACC23FC3AFED1621D806A8,
+	GameManager_InvokeBingoPanel_m77B8245E638C4BA95C04904BE3A8061915C5B3F1,
+	GameManager_onBackButton_m55AFE653BAD1ADCD9464B83DE316378996AADC6B,
+	GameManager_OnShowRuleButtonOn_mD6B48D227EFA41C60E0DC907B9C29D83CFD5F45B,
+	GameManager_OnShowRuleButtonOff_mF2136E2982FFAFB129399B976EDBBFA5F79A22CC,
+	GameManager_RuleOffButton_m45D1046D9BD305B5E66322F51624300902C59C6A,
+	GameManager__ctor_mE8666F6D0CA9C31E16B719F79780DC4B0245B64D,
+	U3CTouchU3Ed__23__ctor_m71E194781FA583C25CD526E589BEB010C44467DF,
+	U3CTouchU3Ed__23_System_IDisposable_Dispose_m1894BE9998C142BE214AC91167200F887D2E7083,
+	U3CTouchU3Ed__23_MoveNext_mFE8EB3C9CEF790170A2F08C521C64CBC02DC4BBB,
+	U3CTouchU3Ed__23_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m26563B1FF32121B439BDF44F7AE53F49BC4F69A7,
+	U3CTouchU3Ed__23_System_Collections_IEnumerator_Reset_mEFC22C9F628578F6E4534EB9B66D846E80A0E178,
+	U3CTouchU3Ed__23_System_Collections_IEnumerator_get_Current_mB3646292180D5EA1590FD4778DBBFFC3C9056344,
+	U3CShowReachPanelU3Ed__30__ctor_m3ECD653EE8FF7A2B6B100FA5DD37209EB26CEB41,
+	U3CShowReachPanelU3Ed__30_System_IDisposable_Dispose_m456FB45AAEBD3AE6B6E3EFDC83B533E060430B70,
+	U3CShowReachPanelU3Ed__30_MoveNext_mED8DB1301BB75E82591ABFDAB86CFBC208231759,
+	U3CShowReachPanelU3Ed__30_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m6346A10ABB23A9A7E1D62A7513E1F30ED32A20EF,
+	U3CShowReachPanelU3Ed__30_System_Collections_IEnumerator_Reset_mA1C1370ED332922130840FAFF8ACDCBF4C7A42EB,
+	U3CShowReachPanelU3Ed__30_System_Collections_IEnumerator_get_Current_m0DA812472EF9E7B5D89D20CADAECF01CE2CF57CF,
+	U3CShowBingoPanelU3Ed__32__ctor_m6437E92AE5A2B3D237277C0AE620CBB258805130,
+	U3CShowBingoPanelU3Ed__32_System_IDisposable_Dispose_m7B565425CE2E11A46996E3FF09D709B70800F24A,
+	U3CShowBingoPanelU3Ed__32_MoveNext_m1C35EC5AE93BB09407F525B2E3D97953722F5048,
+	U3CShowBingoPanelU3Ed__32_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m69B0C3E3282DBE5678141B0525DF4EE15E651836,
+	U3CShowBingoPanelU3Ed__32_System_Collections_IEnumerator_Reset_m0FAC8108A1D0326254B6E2F8563F84D5153054F3,
+	U3CShowBingoPanelU3Ed__32_System_Collections_IEnumerator_get_Current_mF1996117F0DA41C9D676E8559523616E362B4197,
+	IDFA__requestIDFA_m34B4489232B8F1D2524110B6215A38CEA8537C28,
+	IDFA_Start_m40C0447CA15A002DEE5EC90C3879001A052FBB48,
+	IDFA_DelayIDFA_m2F29EC5015CEB2D4EAD0637E2E504561679A920B,
+	IDFA__ctor_m875FEFA3E857882BA115D257597A692CD2D1871A,
+	InputButton_Start_m5310FFAB85723997516F3FC7C43F6124B777B858,
+	InputButton_Update_m435EAF572CA4448F930C74DB760FE54693E1FC85,
+	InputButton_OnThis_m9F947A834FFF8B6313F280B78F5CAA7A01780F65,
+	InputButton__ctor_mF7B1A14567DFA9E95C6AD997458F18F13B67C478,
+	InputPanel_Start_m2FAE915328E3C3FCCE40B18B5B343A0F55BBEB35,
+	InputPanel_SwapnPanel_mDC9741B49E4879FE38B08FB98C7176407F46214F,
+	InputPanel_CreateButtonAndString_m5058841D953B575B111C3F8AC458E4889DD6EF90,
+	InputPanel_CheckColBingo_m523BD0FDB561B400006F048E3E51820595AC0D92,
+	InputPanel_CheckColReach_m6E5B8544519B891471714C1A9D65A7E90ED69C86,
+	InputPanel_CheckRowReach_mEF9FD4A005E3A4D4706C033C7B59C844FBE79DB7,
+	InputPanel_CheckRowBingo_m5FAFE2869EE285BFDDF92F705BAFF357408981B9,
+	InputPanel_CheckCrossBingo_0_m21274FB6F9343C460FF2E15AA273054C131FFA6B,
+	InputPanel_CheckCrossReach_0_m9B59658EA1ADD604A0B3F10C4596706E4EDC7B58,
+	InputPanel_CheckCrossBingo_4_m31D144A092A1707E3EEC3805377174565A6987CE,
+	InputPanel_CheckCrossReach_4_mB4F3DB365C66E6CE5493187C2ED7E7D1D8362FF9,
+	InputPanel_DebugReach_m20E9191D8C7D9569D9E6D3ACEB4B7344D1B560DF,
+	InputPanel_DebugBingo_m6B9E63CE7A2EF532D1469C039037709DCF55A4A9,
+	InputPanel__ctor_m0C5CE54F48B4DCF3D457CC5733FC9711C8E2CFA8,
+	MultiBingoBallView_Start_m9768747CE1A5E556F9D85B4C04A5322581FBFFB8,
+	MultiBingoBallView_Appear_m2B22F9B720A25D8452FBE6F06AC969A7E54C91AE,
+	MultiBingoBallView_Update_m16D101960207CBC30DE928AE4A15C2751C63E89E,
+	MultiBingoBallView__ctor_m16F9A5E843D659C735D7D49508FF420171E17A35,
+	MultiBingoManager_Start_m0F14CAD11B78D23622297424AC06EDD38EC6DE0A,
+	MultiBingoManager_Update_m08EC2B8B6D4F19A8E5C681086B0729D547A0A662,
+	MultiBingoManager_OnStartButton_m8D0AD5D0B41AE98CE0B04FFF993C84B1C6B371F3,
+	MultiBingoManager_NumberSelection_mDE0AFF20CCB4666C21D496A00C045846E2B794BD,
+	MultiBingoManager_Appear_mD97099BD65CBFD169419B853B644EABF37C4D74B,
+	MultiBingoManager_OnStopButton_m5A1F91C59CD0E9A70D93D5BB1D4C432ECB1C3DCC,
+	MultiBingoManager_CanTouch_m359F10F1BC6AD116A7C9C6628B3B407FC1BB469B,
+	MultiBingoManager_OnListButton_mC5AB1B65E6E416A1EABEF41F0D26583428638ACB,
+	MultiBingoManager_FalseListButton_m4B18E860E337268BE4794B5F144F2DFF7D2366CB,
+	MultiBingoManager_NoBackButton_m0EFD0F39812B8D690454ADF6BDDA853129E6E118,
+	MultiBingoManager_ReallyBackQuestion_m6F0DFC4DE89DD97F9841292F8FD1127742D7A993,
+	MultiBingoManager_TitleButton_m10E047DBBC4E799A5022DAC9F24E43EEB865403C,
+	MultiBingoManager_RetryButton_m4BBA0BEFFBEE638E9AE1D54F0F9D755FF541A851,
+	MultiBingoManager__ctor_m302039B2A3899B329F13299676A556DC19520311,
+	U3CNumberSelectionU3Ed__26__ctor_mB92AB9467565CC16062FE5642AB53ABD40057D44,
+	U3CNumberSelectionU3Ed__26_System_IDisposable_Dispose_mBED18D9A4EDDF0F7E392B48270AA7D3F94E39CBB,
+	U3CNumberSelectionU3Ed__26_MoveNext_m903E527364FAB985EE9D4F1F86D8F2E4A6EBE671,
+	U3CNumberSelectionU3Ed__26_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m82045EC541615F8A814B3BA05F427969217C8023,
+	U3CNumberSelectionU3Ed__26_System_Collections_IEnumerator_Reset_mE66F9BF247286ABAD63686E8E5B2F97948A352B6,
+	U3CNumberSelectionU3Ed__26_System_Collections_IEnumerator_get_Current_m7DAB2E0A0B144ECD697B64C2B28EA6255E61FDD7,
+	U3CCanTouchU3Ed__29__ctor_m06BAE57DC6CE9E14328EA576CC1C5AE50F512AF3,
+	U3CCanTouchU3Ed__29_System_IDisposable_Dispose_mED416DE00D4144F7EEFB7AC3B6FD4695C3CCE16C,
+	U3CCanTouchU3Ed__29_MoveNext_m9F658067EC89110C176A5F1240336F8AB043D650,
+	U3CCanTouchU3Ed__29_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mC79DA039702207A291FDD1F2FCFEF3B20998B249,
+	U3CCanTouchU3Ed__29_System_Collections_IEnumerator_Reset_m21C8D79C4BC120EB4C2E8CE97CE605EA55324D7E,
+	U3CCanTouchU3Ed__29_System_Collections_IEnumerator_get_Current_m5DD712422A9F36E6C1D4540123CC7296F1D1BC1E,
+	OptionController_Start_mB1E7DD6A03BB53629E5A065FEB52F9C1626DEDB7,
+	OptionController_OnBackButton_mEB3AA8281FAB5E9EB8CD90D096CD865598689919,
+	OptionController_OnBingoSE_mA9A1D2FB1CB007B8FC33720A46057CA4E43E3BD2,
+	OptionController_OnBGMVolumeUp_m4A683D6C830B0F3106F7030044C3FFBC950AF852,
+	OptionController_OnBGMVolumeDown_mF66A5AD7D2819BC5E278C7AC1B0D593F19D1CF7F,
+	OptionController_OnSoundVolumeUp_mB3E8E9FC0D5949991AEEDF99C93D5AEF8C2CE62E,
+	OptionController_OnSoundVolumeDown_m2C99366879A25AE250FC8EF4598E66208451F8A4,
+	OptionController_OnBingoNumberReduce_mABE0BAF1DA2256B992D4759BC3D969925D40B263,
+	OptionController_OnBingoNumberIncrease_mC2553D76DABDCF9710E86A908301C1595A6DFF71,
+	OptionController_OnStopFlashButton_m92A0F0198D75030146B51F1AE0677222B9830833,
+	OptionController__ctor_m1C9210D1ECF8B2737298B33CCC6C2DC1008D0CC9,
+	OptionManager_Awake_mE48E8DBA6BB89782215F162DD7C6315CEE7C9E6A,
+	OptionManager_Start_m2BC10D71934C6473BB09D06C2E50C89AE8685415,
+	OptionManager_Update_mEF3BDF0C890BB50D8032B5FAD3F51116CE433477,
+	OptionManager_OnBGMVolumeUp_mD51BE7F5BE40640E1E24D1DB7720D35EBA0EAB1C,
+	OptionManager_OnBGMVolumeDown_mAD2E6A8B632E3416FB0ADADA344E0B3947AF7804,
+	OptionManager_OnSoundVolumeUp_m892BF67282B31451300EFD0B56396C2E2E09A976,
+	OptionManager_OnSoundVolumeDown_m2E44CABE6EC7C850DE0F8746099B8DBD877862D2,
+	OptionManager_OnBingoNumberReduce_m26524400F475880765E2EBF1EB035E9217C9617D,
+	OptionManager_OnBingoumberIncrease_m4EA4D38FDA24A31817790E166C67B0EB5FB029FC,
+	OptionManager_OnButtonSE_mA7F04C13FEBBBC82693F3924E85FE036FA305E4A,
+	OptionManager_OnBackButton_m5477F561BA7A80292851A206A0CBB3F5E98A662D,
+	OptionManager_OnReachSE_m0FE91D49757E07E04837B7E9229D47D947404F6D,
+	OptionManager_OnBingoSE_m3A7136095F95E4C74D7E93040532F79A576531B6,
+	OptionManager_Save_m5FCAC84AF8D367BEA556E91F0274B472575FF132,
+	OptionManager_Load_m0666F936ED276465B95F2E2EEA8F6DA689D4D3C1,
+	OptionManager__ctor_mF7C9174F7B8B37033587879F174391A3A306E996,
+	RuleManager_Start_m8E77E61D9350FD43186657971CF7718331053FAE,
+	RuleManager_Update_m554BED80532635A5D1242B1499AD67E133CCB061,
+	RuleManager_OnSinglePanelButton_m08D57D477E80E3AFB5B1A9F93D3EDB454A0FAB74,
+	RuleManager_OnSingleBingoImage_1_m67EEB47F0D39A8E77191526840F19A354257C356,
+	RuleManager_OnSingleBingoImage_2_m75AC69E0F4150D007A0A24B2BF655D3B90BE8F17,
+	RuleManager_OnMultiPanelButton_m249CB1791770A30B6C4E610C2C323408B5ACB900,
+	RuleManager_OnMultiBingoImage_1_m8811083B890C23F77D297ACA3F9B9DE448495AD3,
+	RuleManager_OnMultiBingoImage_2_m026799228C295C29CEA6ACBE14425B2B3B2B29F2,
+	RuleManager_OnBackButton_m929C7C2F8A04F676E65900DC733A40471E182CDC,
+	RuleManager__ctor_mBF7E77F05376FED419D7FE13466D8AC1045D288A,
+	TitleManager_Start_mB1BDED26067331336418D8C8F760161E62F96224,
+	TitleManager_Update_m3D4B2483A33278FCFEB981AA66D621FDF1A652C7,
+	TitleManager_OnSingleBingoButton_mC35C926B258EB6156A9E850D50026A4D8D73FC34,
+	TitleManager_OnOptionSceneButton_m5FEB1C5DAC80892675A8AB5BA68D5D4D269695DC,
+	TitleManager_OnMultiBingoButton_m4634FB23E0D4048A656BF1945473BB05F9581C37,
+	TitleManager_OnRuleButton_mB616DD33630B93776F271FB567D6F66BEA1D9371,
+	TitleManager__ctor_m0D14731249E3B6D0846A587A421CAE4FAD2056D0,
+};
+static const int32_t s_InvokerIndices[171] = 
+{
+	1138,
+	1138,
+	1138,
+	1138,
+	630,
+	630,
+	1138,
+	1138,
+	1138,
+	1138,
+	630,
+	630,
+	630,
+	1138,
+	1106,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	966,
+	1138,
+	1138,
+	1138,
+	1126,
+	1138,
+	1138,
+	1138,
+	966,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1106,
+	1138,
+	1138,
+	1138,
+	1138,
+	580,
+	1106,
+	1138,
+	1106,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	966,
+	1138,
+	1126,
+	1106,
+	1138,
+	1106,
+	966,
+	1138,
+	1126,
+	1106,
+	1138,
+	1106,
+	966,
+	1138,
+	1126,
+	1106,
+	1138,
+	1106,
+	1919,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	850,
+	504,
+	504,
+	850,
+	1126,
+	850,
+	1126,
+	850,
+	1138,
+	1126,
+	1138,
+	1138,
+	966,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1106,
+	966,
+	1138,
+	1106,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	966,
+	1138,
+	1126,
+	1106,
+	1138,
+	1106,
+	966,
+	1138,
+	1126,
+	1106,
+	1138,
+	1106,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+	1138,
+};
+extern const CustomAttributesCacheGenerator g_AssemblyU2DCSharp_AttributeGenerators[];
+IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
+const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
+{
+	"Assembly-CSharp.dll",
+	171,
+	s_methodPointers,
+	0,
+	NULL,
+	s_InvokerIndices,
+	0,
+	NULL,
+	0,
+	NULL,
+	0,
+	NULL,
+	NULL,
+	g_AssemblyU2DCSharp_AttributeGenerators,
+	NULL, // module initializer,
+	NULL,
+	NULL,
+	NULL,
+};
